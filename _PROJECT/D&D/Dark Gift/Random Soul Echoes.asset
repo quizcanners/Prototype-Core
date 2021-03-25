@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fb278cf6044a1429951f713848850a, type: 3}
+  m_Name: Random Soul Echoes
+  m_EditorClassIdentifier: 
+  _dicesToRoll: 06000000
+  elements:
+  - Chances: 1
+    subTables: []
+    Name: "Become charmed by one creature you can see (DM\u2019s choice) for 1 minute
+      or until it damages you."
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    subTables: []
+    Name: "Become frightened by one creature you can see (DM\u2019s choice) for 1
+      minute or until it damages you."
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    subTables: []
+    Name: Perceive another time or place around you until the end of your next turn.
+      You are blinded to your actual surroundings.
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    subTables: []
+    Name: Perceive a different time or place overlapped your surroundings. Your speed
+      is halved until the end of your next turn.
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    subTables: []
+    Name: You are overwhelmed by memories and sensations. You are incapacitated until
+      the end of your next turn.
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    subTables: []
+    Name: Reroll the ability check, attack roll, or saving throw that you just made.
+      You must use this new roll.
+    Description:
+      Description: 
+      _editing: 0

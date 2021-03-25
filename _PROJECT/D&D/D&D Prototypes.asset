@@ -1,0 +1,870 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2abd82c1e806ad249ae045ff605fe9e5, type: 3}
+  m_Name: D&D Prototypes
+  m_EditorClassIdentifier: 
+  Characters:
+    keys:
+    - Vox Abrams
+    - Talin
+    - Lorely
+    - Rickon
+    - Lilith
+    - Luthien
+    - Bill Bone
+    - Silly Banana Shithead
+    values:
+    - Allignment:
+        Alligned: 1
+        Goodness: 1
+        Order: 0
+      Stats:
+        keys: 000000000100000002000000030000000400000005000000
+        values:
+        - Value: 14
+        - Value: 10
+        - Value: 12
+        - Value: 9
+        - Value: 13
+        - Value: 17
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Vox Abrams
+      senses:
+        keys: 
+        values: []
+      Level:
+        Value: 6
+      characterClass: 3
+      characterRace: 3
+      Experience: 355000
+      ArmorProficiencies:
+        keys: 
+        values: 
+      WeaponProficiencies:
+        keys: 
+        values: 
+      ToolProficiencies:
+        keys: 
+        values: 
+      _featureStates:
+        keys:
+        - Spellcasting
+        - Proficiencies
+        values:
+        - '{}'
+        - '{"Skills":{"keys":[1,6,12,16,18],"values":[2,2,1,1,1]}}'
+        modes: 0000000000000000
+      Wallet:
+        _currencies: 
+    - Allignment:
+        Alligned: 1
+        Goodness: 1
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 
+      skillSet:
+        keys: 01000000060000000d00000011000000
+        values: 01000000010000000100000001000000
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Talin
+      senses:
+        keys: 
+        values: []
+      Level:
+        Value: 1
+      characterClass: 0
+      characterRace: 0
+      Experience: 0
+      ArmorProficiencies:
+        keys: 
+        values: 
+      WeaponProficiencies:
+        keys: 
+        values: 
+      ToolProficiencies:
+        keys: 
+        values: 
+      _featureStates:
+        keys:
+        - Spellcasting
+        - Spirit_Totem
+        values:
+        - '{}'
+        - '{}'
+        modes: 0000000000000000
+      Wallet:
+        _currencies: 0000000000000000000000000000000000000000
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Lorely
+      senses:
+        keys: 
+        values: []
+      Level:
+        Value: 1
+      characterClass: 0
+      characterRace: 0
+      Experience: 0
+      ArmorProficiencies:
+        keys: 
+        values: 
+      WeaponProficiencies:
+        keys: 
+        values: 
+      ToolProficiencies:
+        keys: 
+        values: 
+      _featureStates:
+        keys:
+        - Proficiencies
+        values:
+        - '{"Skills":{"keys":[2,12,17],"values":[1,1,1]}}'
+        modes: 00000000
+      Wallet:
+        _currencies: 
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Rickon
+      senses:
+        keys: 
+        values: []
+      Level:
+        Value: 1
+      characterClass: 0
+      characterRace: 0
+      Experience: 0
+      ArmorProficiencies:
+        keys: 
+        values: 
+      WeaponProficiencies:
+        keys: 
+        values: 
+      ToolProficiencies:
+        keys: 
+        values: 
+      _featureStates:
+        keys: []
+        values: []
+        modes: 
+      Wallet:
+        _currencies: 
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Lilith
+      senses:
+        keys: 
+        values: []
+      Level:
+        Value: 1
+      characterClass: 0
+      characterRace: 0
+      Experience: 0
+      ArmorProficiencies:
+        keys: 
+        values: 
+      WeaponProficiencies:
+        keys: 
+        values: 
+      ToolProficiencies:
+        keys: 
+        values: 
+      _featureStates:
+        keys: []
+        values: []
+        modes: 
+      Wallet:
+        _currencies: 
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Luthien
+      senses:
+        keys: 
+        values: []
+      Level:
+        Value: 1
+      characterClass: 0
+      characterRace: 0
+      Experience: 0
+      ArmorProficiencies:
+        keys: 
+        values: 
+      WeaponProficiencies:
+        keys: 
+        values: 
+      ToolProficiencies:
+        keys: 
+        values: 
+      _featureStates:
+        keys: []
+        values: []
+        modes: 
+      Wallet:
+        _currencies: 
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Bill Bone
+      senses:
+        keys: 
+        values: []
+      Level:
+        Value: 0
+      characterClass: 0
+      characterRace: 0
+      Experience: 0
+      ArmorProficiencies:
+        keys: 
+        values: 
+      WeaponProficiencies:
+        keys: 
+        values: 
+      ToolProficiencies:
+        keys: 
+        values: 
+      _featureStates:
+        keys: []
+        values: []
+        modes: 
+      Wallet:
+        _currencies: 
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Silly Banana Shithead
+      senses:
+        keys: 
+        values: []
+      Level:
+        Value: 0
+      characterClass: 0
+      characterRace: 0
+      Experience: 0
+      ArmorProficiencies:
+        keys: 
+        values: 
+      WeaponProficiencies:
+        keys: 
+        values: 
+      ToolProficiencies:
+        keys: 
+        values: 
+      _featureStates:
+        keys: []
+        values: []
+        modes: 
+      Wallet:
+        _currencies: 
+  Monsters:
+    keys:
+    - Displacer Beast
+    - Gnoll pack lord
+    - Hyenas
+    - Gnoll
+    - Dryad
+    - Satyr
+    - Centaurus
+    - Scout
+    - Pixie
+    - Owlbear
+    - Elk
+    - Giant Elk
+    - Blink Dog
+    - Faerie dragon
+    - Druid
+    - Treant
+    - unicorn
+    values:
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 
+      skillSet:
+        keys: 01000000060000000b0000000e000000
+        values: 01000000010000000100000002000000
+      savingThrowProficiencies:
+        keys: 0100000003000000
+        values: 0100000002000000
+      _name: Displacer Beast
+      senses:
+        keys: 0000000001000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 12
+        - _diagonalHalf: 0
+          _nonDIagonal: 12
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Gnoll pack lord
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Hyenas
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Gnoll
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Dryad
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Satyr
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Centaurus
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Scout
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Pixie
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Owlbear
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Elk
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Giant Elk
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Blink Dog
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Faerie dragon
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Druid
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: Treant
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+    - Allignment:
+        Alligned: 0
+        Goodness: 0
+        Order: 0
+      Stats:
+        keys: 
+        values: []
+      LanguagesKnown: 00000000
+      skillSet:
+        keys: 
+        values: 
+      savingThrowProficiencies:
+        keys: 
+        values: 
+      _name: unicorn
+      senses:
+        keys: 
+        values: []
+      CR: 0
+      Type: 0
+      _size: 2
+      Speed:
+        keys: 00000000
+        values:
+        - _diagonalHalf: 0
+          _nonDIagonal: 6
+      HitDices: 1
+  Parties:
+    keys:
+    - A bunch of Assholes
+    - Some shitheads
+    - Anoos
+    values:
+    - _partyName: A bunch of Assholes
+      PartyMembers:
+      - Id: Vox Abrams
+      - Id: Lilith
+      - Id: Luthien
+      _inspecedPartyMember: 0
+    - _partyName: Some shitheads
+      PartyMembers:
+      - Id: Vox Abrams
+      - Id: Some weird stuff
+      - Id: Fasdeqwere
+      - Id: Vox Abrams
+      _inspecedPartyMember: 3
+    - _partyName: Anoos
+      PartyMembers:
+      - Id: Vox Abrams
+      - Id: Fasdeqwere
+      - Id: New Element
+      _inspecedPartyMember: -1
+  RollTables:
+    keys:
+    - Random Monster
+    - _Random Villian
+    - _Random Dungeon
+    - _Random Sattlement
+    - _ World-Shaking Event
+    - _Random Quest
+    - _Random NPC
+    values:
+    - {fileID: 11400000, guid: 857d30bd7c531fd4fa8d9ce981315257, type: 2}
+    - {fileID: 11400000, guid: e3250706b56d4f84c8257ee0597f768a, type: 2}
+    - {fileID: 11400000, guid: 10591d0a9ce581e4ca1c8efa3f168d76, type: 2}
+    - {fileID: 11400000, guid: 724041a42387ee543bd33ccd752b6134, type: 2}
+    - {fileID: 11400000, guid: 89130f3079a6ff04d9ab1159ad4514e7, type: 2}
+    - {fileID: 11400000, guid: e8ea0e3a5bce4eb488182e28a86bad6e, type: 2}
+    - {fileID: 11400000, guid: cd35f5d51e69ac24fb16147d19dc7373, type: 2}

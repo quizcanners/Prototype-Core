@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaa7a4c98399e747adf0ec045fde088, type: 3}
+  m_Name: _Random Quest
+  m_EditorClassIdentifier: 
+  Sentence:
+    Value: 
+    Editing: 0
+  Tables:
+  - {fileID: 11400000, guid: 4a75996eb08fcc94f84c34bfe7e59080, type: 2}
+  - {fileID: 11400000, guid: 8ba39d8b2e46c374e98260897b56eff4, type: 2}
+  - {fileID: 11400000, guid: 2a6a6400f78357d409e8fa573e4b26e2, type: 2}
+  - {fileID: 11400000, guid: 73ed26024f93cd14793f6ced0c4737c4, type: 2}
+  - {fileID: 11400000, guid: 1e11dfae26792d144b883eabe60f8be1, type: 2}
+  - {fileID: 11400000, guid: 1ef071e2886c98140a6a7a802f840b86, type: 2}

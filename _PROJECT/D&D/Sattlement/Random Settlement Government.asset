@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fb278cf6044a1429951f713848850a, type: 3}
+  m_Name: Random Settlement Government
+  m_EditorClassIdentifier: 
+  _dicesToRoll: 64000000
+  elements:
+  - Chances: 8
+    subTables: []
+    Name: Autocracy
+  - Chances: 5
+    subTables: []
+    Name: Bureaucracy
+  - Chances: 6
+    subTables: []
+    Name: Confederacy
+  - Chances: 3
+    subTables: []
+    Name: Democracy
+  - Chances: 5
+    subTables: []
+    Name: Dictatorship
+  - Chances: 15
+    subTables: []
+    Name: Feudalism
+  - Chances: 2
+    subTables: []
+    Name: Gerontocracy
+  - Chances: 9
+    subTables: []
+    Name: Hierarchy
+  - Chances: 3
+    subTables: []
+    Name: Magocracy
+  - Chances: 2
+    subTables: []
+    Name: Matriarchy
+  - Chances: 6
+    subTables: []
+    Name: Militocracy
+  - Chances: 10
+    subTables: []
+    Name: Monarchy
+  - Chances: 4
+    subTables: []
+    Name: Oligarchy
+  - Chances: 2
+    subTables: []
+    Name: Patriarchy
+  - Chances: 3
+    subTables: []
+    Name: Mericocracy
+  - Chances: 2
+    subTables: []
+    Name: Plutocracy
+  - Chances: 7
+    subTables: []
+    Name: Republic
+  - Chances: 2
+    subTables: []
+    Name: Satrapy
+  - Chances: 1
+    subTables: []
+    Name: Kleptocracy
+  - Chances: 5
+    subTables: []
+    Name: Theocracy
