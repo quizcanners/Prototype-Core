@@ -29,6 +29,14 @@ MonoBehaviour:
     tableKey: _Random Quest
     _data:
       _value: r|1|y|v|1|0|p|138|e|17|r|1|y|v|1|4|p|0|||e|17|r|1|y|v|1|1|p|0|||e|17|r|1|y|v|1|2|p|0|||e|17|r|1|y|v|1|2|p|0|||e|17|r|1|y|v|1|1|p|0|||e|17|r|1|y|v|1|3|p|0||||
+  - _name: Opponent
+    tableKey: _Random Encounter
+    _data:
+      _value: r|1|y|v|1|0|p|115|e|17|r|1|y|v|1|4|p|0|||e|17|r|1|y|v|1|7|p|0|||e|17|r|1|y|v|1|4|p|0|||e|17|r|1|y|v|1|2|p|0|||e|17|r|1|y|v|1|0|p|0||||
+  - _name: Obstacle
+    tableKey: Random Skill
+    _data:
+      _value: r|1|y|v|2|18|p|0||
   SkillChecks:
   - Name: Talk to a horse
     Check:

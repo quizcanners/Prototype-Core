@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc835dbac525ea9489e03870a628fc0e, type: 3}
+  m_Name: Random CreatureType
+  m_EditorClassIdentifier: 
+  _sheetParcer:
+    editUrl: 
+    url: 
+    pages: []
+    _selectedPage: 0
+    columns: []
+  _dicesToRoll: 
+  elements:
+  - Chances: 1
+    Value: 0
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 1
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 2
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 3
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 4
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 5
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 6
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 7
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 8
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 9
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 10
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 11
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 12
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0
+  - Chances: 1
+    Value: 13
+    subTables: []
+    Description:
+      Description: 
+      _editing: 0

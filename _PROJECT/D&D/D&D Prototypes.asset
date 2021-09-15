@@ -860,6 +860,8 @@ MonoBehaviour:
     - _ World-Shaking Event
     - _Random Quest
     - _Random NPC
+    - _Random Encounter
+    - Random Skill
     values:
     - {fileID: 11400000, guid: 857d30bd7c531fd4fa8d9ce981315257, type: 2}
     - {fileID: 11400000, guid: e3250706b56d4f84c8257ee0597f768a, type: 2}
@@ -868,3 +870,5 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 89130f3079a6ff04d9ab1159ad4514e7, type: 2}
     - {fileID: 11400000, guid: e8ea0e3a5bce4eb488182e28a86bad6e, type: 2}
     - {fileID: 11400000, guid: cd35f5d51e69ac24fb16147d19dc7373, type: 2}
+    - {fileID: 11400000, guid: 2802919c4fd81b043b67212572ec2f66, type: 2}
+    - {fileID: 11400000, guid: 1e6e82a7888d64c4fa7e38c7741df17b, type: 2}
