@@ -7,7 +7,7 @@ namespace Dungeons_and_Dragons
     [CreateAssetMenu(fileName = FILE_NAME, menuName = TABLE_CREATE_NEW_PATH + "Concept/" + FILE_NAME)]
     public class RollTable_Class_ConditionGroup : DnD_RollTable_ConceptConditionGeneric<Class>
     {
-        public const string FILE_NAME = "Conditional Table Group CLASS";
+        public const string FILE_NAME = "Conditional Table Group "+nameof(Class);
 
 
 

@@ -202,8 +202,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  _roundedCorners:
-  - 0
+  _roundedCournersPixels: 00000000
   feedPositionData: 1
   _positionDataType: 0
   faeOutUvPosition:
@@ -212,10 +211,10 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
-  _modulesStd:
-    _value: 
   _showModules: 0
   _inspectedModule: 0
+  _modulesStd:
+    _value: 
 --- !u!1 &2561044022214173511
 GameObject:
   m_ObjectHideFlags: 0

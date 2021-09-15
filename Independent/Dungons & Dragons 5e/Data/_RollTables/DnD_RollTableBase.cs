@@ -59,6 +59,11 @@ namespace Dungeons_and_Dragons
             using (result.AddAndUse(this))
             {
                 InspectInList_Internal(ref edited, index, result);
+
+                if (icon.Dice.Click())
+                    Roll(result);
+
+                this.ClickHighlight();
             };
         }
 
@@ -66,11 +71,6 @@ namespace Dungeons_and_Dragons
         {
             if (icon.Enter.Click() || "{0} | {1} : {2}".F(index, this.GetNameForInspector().Replace("Random ", ""), GetRolledElementName(result)).ClickLabel())
                 edited = index;
-
-            if (icon.Dice.Click())
-                Roll(result);
-
-            this.ClickHighlight();
         }
 
         public void InspectInList(ref int edited, int index)

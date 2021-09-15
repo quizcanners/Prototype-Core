@@ -6,7 +6,7 @@ namespace QuizCanners.IsItGame.UI
 {
     public class ButtonSoundsAndHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
     {
-        [SerializeField] private Button _button;
+        [SerializeField] protected Button _button;
         [SerializeField] private IigEnum_SoundEffects _soundToPlay = IigEnum_SoundEffects.Click;
         private bool _isDown;
         private float _downTime;

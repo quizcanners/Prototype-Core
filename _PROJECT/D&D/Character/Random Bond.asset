@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71fb278cf6044a1429951f713848850a, type: 3}
-  m_Name: Random NPC Bonds
+  m_Name: Random Bond
   m_EditorClassIdentifier: 
   _sheetParcer:
     editUrl: https://docs.google.com/spreadsheets/d/1Gldbm-fxLZSY3b9hGpRL_t_tbL0dx6O4IOzyzIz3WqI/edit#gid=886490155

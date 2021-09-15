@@ -48,6 +48,5 @@ namespace Dungeons_and_Dragons
         Tough=39,
         WarCater=40,
         WeaponMaster=41
-
     }
 }

@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 namespace QuizCanners.IsItGame.UI
 {
-    public class OnMouseOverEffects : ButtonSoundsAndHold
+    public class OnMouseOverEffects : ButtonSoundsAndHold, ISelectHandler, IDeselectHandler
+
 #if UNITY_STANDALONE || UNITY_EDITOR
         , IPointerEnterHandler, IPointerExitHandler
 #endif
@@ -38,7 +39,6 @@ namespace QuizCanners.IsItGame.UI
                 _isHighlighted = true;
                 _mouseEnterSound.Play();
             }
-            
         }
 
         public override void OnPointerExit(PointerEventData eventData)
@@ -51,14 +51,24 @@ namespace QuizCanners.IsItGame.UI
             }
         }
 #endif
+        public void OnSelect(BaseEventData eventData)
+        {
+            _isHighlighted = true;
+            _mouseEnterSound.Play();
+        }
+
+        public void OnDeselect(BaseEventData eventData)
+        {
+            _isHighlighted = false;
+            _mouseExitSound.Play();
+        }
 
         LerpData ld = new LerpData();
-        private void Update()
+        protected void Update()
         {
             if (Down) 
                 return;
             
-
             ld.Reset();
 
             _lerpIsHighlighted = _isHighlighted;
@@ -70,7 +80,7 @@ namespace QuizCanners.IsItGame.UI
             firstUpdateCompleted = true;
         }
 
-      
+   
 
         [Serializable]
         protected class AffectedElement : ILinkedLerping

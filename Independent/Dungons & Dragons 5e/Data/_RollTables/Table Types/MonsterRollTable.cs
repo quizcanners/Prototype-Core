@@ -15,6 +15,8 @@ namespace Dungeons_and_Dragons
         
         public List<Element> elements;
 
+        public Element this[RolledTable.Result roll] => Get(elements, roll.Roll);
+
         protected override List<Element> List { get => elements; set => elements = value; }
 
         protected override bool EditList() => "{0} {1}".F(_dicesToRoll.ToDescription(), name).edit_List(elements).nl();
@@ -29,13 +31,15 @@ namespace Dungeons_and_Dragons
 
         protected override void InspectInList_Internal(ref int edited, int index, RolledTable.Result result)
         {
-            base.InspectInList_Internal(ref edited, index, result);
+            if (icon.Enter.Click())
+                edited = index;
+
             Inspect_Select(result);
         }
 
         private void Inspect_Select(RolledTable.Result result) 
         {
-            Element el = Get(elements, result.Roll);
+            Element el = this[result];
             if ("Enemy".select(70, ref el, elements) && el != null)
                 result.Roll = GetTargetRoll(elements, el);
 

@@ -63,6 +63,25 @@ namespace Dungeons_and_Dragons
             return "{0} {1}".F(_dicesToRoll.ToDescription(), QcSharp.KeyToReadablaString(name.SimplifyTypeName())).edit_List(elements, ref _editedElement).nl();
         }
 
+
+        private void InspectSelect(RolledTable.Result result)
+        {
+            Element el = this[result];
+            if (pegi.select(ref el, elements, stripSlashes: true) && el != null)
+            {
+                result.Roll = GetTargetRoll(elements, el);
+                el.Roll(result.SubResultsList);
+            }
+        }
+
+        protected override void InspectInList_Internal(ref int edited, int index, RolledTable.Result result)
+        {
+            if (icon.Enter.Click() || "{0} | {1}".F(index, nameof(T)).ClickLabel(width: 120))
+                edited = index;
+
+            InspectSelect(result);
+        }
+
         public override string GetRolledElementName(RolledTable.Result result)
         {
             if (!result.IsRolled)

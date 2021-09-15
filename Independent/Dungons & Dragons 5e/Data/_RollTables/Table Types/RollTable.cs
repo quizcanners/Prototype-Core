@@ -35,12 +35,9 @@ namespace Dungeons_and_Dragons
                 Roll(result);
 
             Element el = Get(elements, result.Roll);
-            if (pegi.select(ref el, elements, stripSlashes: true) && el!= null) 
-            {
-                result.Roll = GetTargetRoll(elements, el);
-                el.Roll(result.SubResultsList);
-            }
-            
+
+            InspectSelect(result);
+
             this.ClickHighlight();
 
             if (el != null && icon.Enter.isEntered(ref _inspectingRollResult).nl())
@@ -48,7 +45,25 @@ namespace Dungeons_and_Dragons
             
         }
 
+        private void InspectSelect(RolledTable.Result result) 
+        {
+            Element el = Get(elements, result.Roll);
+            if (pegi.select(ref el, elements, stripSlashes: true) && el != null)
+            {
+                result.Roll = GetTargetRoll(elements, el);
+                el.Roll(result.SubResultsList);
+            }
+        }
+
         private int _editedElement = -1;
+
+        protected override void InspectInList_Internal(ref int edited, int index, RolledTable.Result result)
+        {
+            if (icon.Enter.Click() || "{0} | {1}".F(index, name.Replace("Random", "")).ClickLabel(width: 120))
+                edited = index;
+
+            InspectSelect(result);
+        }
 
         protected override List<Element> List { get => elements; set => elements = value; }
 

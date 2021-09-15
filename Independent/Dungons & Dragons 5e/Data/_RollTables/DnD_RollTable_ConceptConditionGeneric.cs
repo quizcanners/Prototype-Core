@@ -9,8 +9,14 @@ namespace Dungeons_and_Dragons
     public class DnD_RollTable_ConceptConditionGeneric<T> : RandomElementsRollTables, IPEGI where T: IComparable
     {
         [SerializeField] private List<Element> _elements = new List<Element>();
+        [SerializeField] private DefaultConcept _defaultOne;
 
         private int _inspectedElement = -1;
+
+        private enum DefaultConcept 
+        { 
+            Random = 0, First = 1 
+        }
 
         private Element this[RolledTable.Result value]
         {
@@ -40,7 +46,10 @@ namespace Dungeons_and_Dragons
 
         public void Inspect()
         {
-            "Elements".edit_List(_elements, ref _inspectedElement);
+            if (_inspectedElement == -1) 
+                "On Default".editEnum(ref _defaultOne).nl();
+            
+            "Conditional Elements".edit_List(_elements, ref _inspectedElement);
         }
 
         protected override void InspectInternal(RolledTable.Result result)

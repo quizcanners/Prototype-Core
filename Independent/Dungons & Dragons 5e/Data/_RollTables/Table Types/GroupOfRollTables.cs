@@ -16,7 +16,6 @@ namespace Dungeons_and_Dragons
         [SerializeField] private BigTextEditable Sentence = new BigTextEditable();
         public List<RandomElementsRollTables> Tables = new List<RandomElementsRollTables>();
 
-
         public override bool TryGetConcept<CT>(out CT value, RolledTable.Result result) 
         {
             for (int i = 0; i < Tables.Count; i++)
@@ -33,7 +32,6 @@ namespace Dungeons_and_Dragons
 
             return base.TryGetConcept(out value, result);
         }
-
 
         #region Inspector
         private int _inspectedTable = -1;

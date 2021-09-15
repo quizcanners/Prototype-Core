@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71fb278cf6044a1429951f713848850a, type: 3}
-  m_Name: Dragonborn Names Female
+  m_Name: Elf Family
   m_EditorClassIdentifier: 
   _sheetParcer:
-    editUrl: https://docs.google.com/spreadsheets/d/e/2PACX-1vRI9DqgmZQCeSHXMrRtNh9e_8fQLQB_8o3SmRucWSFO9-bcfHT4Lz6tyIsW8FdpeI-aYk6w1rNq8cDh/pub?output=csv
-    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vRI9DqgmZQCeSHXMrRtNh9e_8fQLQB_8o3SmRucWSFO9-bcfHT4Lz6tyIsW8FdpeI-aYk6w1rNq8cDh/pub?
+    editUrl: 
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTFSTYejGLPbFTtSwvDCWf7VOpPx90NYI0P36Ur7-Xad7I4lBIkNjpbLcoHRc5WKaG-jDkZ4k01UUpE/pub?
     pages:
-    - pageName: Dragonborn Names
-      pageIndex: 0
+    - pageName: Elf Family
+      pageIndex: 1061476566
     _selectedPage: 0
     columns:
     - d100
@@ -26,301 +26,301 @@ MonoBehaviour:
   elements:
   - Chances: 2
     subTables: []
-    Name: Akra
+    Name: Aloro
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Aasathra
+    Name: Amakiir
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Antrara
+    Name: Amastacia
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Arava
+    Name: Ariessus
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Biri
+    Name: Arnuanna
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Blendaeth
+    Name: Berevan
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Burana
+    Name: Caerdonel
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Chassath
+    Name: Caphaxath
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Daar
+    Name: Casilltenirra
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Dentratha
+    Name: Cithreth
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Doudra
+    Name: Dalanthan
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Driindar
+    Name: Eathalena
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Eggren
+    Name: Erenaeth
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Farideh
+    Name: Ethanasath
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Findex
+    Name: Fasharash
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Furrele
+    Name: Firahel
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Gesrethe
+    Name: Floshem
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Gilkass
+    Name: Galanodel
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Harann
+    Name: Goltorah
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Havilar
+    Name: Hanali
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Hethress
+    Name: Holimion
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Hillanot
+    Name: Horineth
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Jaxi
+    Name: Iathrana
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Jezean
+    Name: Ilphelkiir
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Jheri
+    Name: Iranapha
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kadana
+    Name: Koehlanna
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kava
+    Name: Lathalas
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Korinn
+    Name: Liadon
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Megren
+    Name: Meliamne
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mijira
+    Name: Mellerelel
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mishann
+    Name: Mystralath
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Nala
+    Name: "Na\xEFlo"
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Nuthra
+    Name: Netyoive
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Perra
+    Name: Ofandrus
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Pogranix
+    Name: Ostoroth
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Pyxrin
+    Name: Othronus
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Quespa
+    Name: Qualanthri
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Raiann
+    Name: Raethran
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Rezena
+    Name: Rothenel
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Ruloth
+    Name: Selevarun
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Saphara
+    Name: Siannodel
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Savaran
+    Name: Suithrasas
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Sora
+    Name: Sylvaranth
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Surina
+    Name: Teinithra
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Synthrin
+    Name: Tiltathana
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Tatyan
+    Name: Wasanthi
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Thava
+    Name: Withrethin
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Uadjit
+    Name: Xiloscient
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Vezera
+    Name: Xistsrith
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Zykroff
+    Name: Yaeldrin
     Description:
       Description: 
       _editing: 0
