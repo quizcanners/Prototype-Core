@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71fb278cf6044a1429951f713848850a, type: 3}
-  m_Name: Tiefling Clan
+  m_Name: Human Spanish Names Female
   m_EditorClassIdentifier: 
   _sheetParcer:
-    editUrl: 
+    editUrl: https://docs.google.com/spreadsheets/d/e/2PACX-1vRI9DqgmZQCeSHXMrRtNh9e_8fQLQB_8o3SmRucWSFO9-bcfHT4Lz6tyIsW8FdpeI-aYk6w1rNq8cDh/pub?output=csv
     url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTFSTYejGLPbFTtSwvDCWf7VOpPx90NYI0P36Ur7-Xad7I4lBIkNjpbLcoHRc5WKaG-jDkZ4k01UUpE/pub?
     pages:
-    - pageName: Dragonborn Clan
-      pageIndex: 863530414
+    - pageName: Half-Ork Female
+      pageIndex: 1934250207
     _selectedPage: 0
     columns:
     - d100
@@ -26,301 +26,301 @@ MonoBehaviour:
   elements:
   - Chances: 2
     subTables: []
-    Name: Akambherylliax
+    Name: Arha
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Argenthrixus
+    Name: Baggi
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Baharoosh
+    Name: Bendoo
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Beryntolthropal
+    Name: Bilga
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Bhenkumbyrznaax
+    Name: Brakka
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Caavylteradyn
+    Name: Creega
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Chumbyxirinnish
+    Name: Drenna
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Clethtinthiallor
+    Name: Ekk
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Daardendrian
+    Name: Emen
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Delmirev
+    Name: Engong
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Dhyrktelonis
+    Name: Fistula
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Ebynichtomonis
+    Name: Gaaki
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Esstyrlynn
+    Name: Gorga
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Fharngnarthnost
+    Name: Grai
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Ghaallixirn
+    Name: Greeba
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Grrrmmballhyst
+    Name: Grigi
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Gygazzylyshrift
+    Name: Gynk
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Hashphronyxadyn
+    Name: Hrathy
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Hshhsstoroth
+    Name: Huru
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Imbixtellrhyst
+    Name: Ilga
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Jerynomonis
+    Name: Kabbarg
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Jharthraxyn
+    Name: Kansif
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kerrhylon
+    Name: Lagazi
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kimbatuul
+    Name: Lezre
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Lhamboldennish
+    Name: Murgen
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Linxakasendalor
+    Name: Murook
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mohradyllion
+    Name: Myev
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mystan
+    Name: Nagrette
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Nemmonis
+    Name: Neega
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Norixius
+    Name: Nella
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Ophinshtalajiir
+    Name: Nogu
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Orexijandilin
+    Name: Oolah
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Pfaphnyrennish
+    Name: Ootah
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Phrahdrandon
+    Name: Ovak
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Pyraxtallinost
+    Name: Ownka
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Qyxpahrgh
+    Name: Puyet
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Raghthroknaar
+    Name: Reeza
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Shestendeliath
+    Name: Shautha
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Skaarzborroosh
+    Name: Silgre
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Sumnarghthrysh
+    Name: Sutha
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Tiammanthyllish
+    Name: Tagga
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Turnuroth
+    Name: Tawar
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Umbyrphrael
+    Name: Tomph
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Vangdondalor
+    Name: Ubada
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Verthisathurgiesh
+    Name: Vanchu
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Wivvyrholdalphiax
+    Name: Vola
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Wystongjiir
+    Name: Volen
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Xephyrbahnor
+    Name: Vorka
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Yarjerit
+    Name: Yevelda
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Zzzxaaxthroth
+    Name: Zagga
     Description:
       Description: 
       _editing: 0

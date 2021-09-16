@@ -28,71 +28,71 @@ MonoBehaviour:
     subTables:
     - {fileID: 11400000, guid: c382146b22fcf2941af9d0ea27ca5446, type: 2}
     - {fileID: 11400000, guid: 1ed76f42d75668e458d47d2f0298b01a, type: 2}
-    Name: Lawful good
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Lawful good
   - Chances: 2
     subTables:
     - {fileID: 11400000, guid: 68eec92c15529cd4eb64a86abea23ba2, type: 2}
     - {fileID: 11400000, guid: 1ed76f42d75668e458d47d2f0298b01a, type: 2}
-    Name: Neutral good
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Neutral good
   - Chances: 2
     subTables:
     - {fileID: 11400000, guid: 6f1b528238ed76542af407a91755bdd4, type: 2}
     - {fileID: 11400000, guid: 1ed76f42d75668e458d47d2f0298b01a, type: 2}
-    Name: Chaotic good
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Chaotic good
   - Chances: 3
     subTables:
     - {fileID: 11400000, guid: c382146b22fcf2941af9d0ea27ca5446, type: 2}
     - {fileID: 11400000, guid: 68eec92c15529cd4eb64a86abea23ba2, type: 2}
-    Name: Lawful neutral
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Lawful neutral
   - Chances: 2
     subTables:
     - {fileID: 11400000, guid: 68eec92c15529cd4eb64a86abea23ba2, type: 2}
     - {fileID: 11400000, guid: cb919b7be19ac2242b0d02a043358745, type: 2}
-    Name: Neutral
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Neutral
   - Chances: 1
     subTables:
     - {fileID: 11400000, guid: 6f1b528238ed76542af407a91755bdd4, type: 2}
     - {fileID: 11400000, guid: 68eec92c15529cd4eb64a86abea23ba2, type: 2}
-    Name: Chaotic neutral
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Chaotic neutral
   - Chances: 3
     subTables:
     - {fileID: 11400000, guid: c382146b22fcf2941af9d0ea27ca5446, type: 2}
     - {fileID: 11400000, guid: aa5de66630129144dba0b05211d5c8ea, type: 2}
-    Name: Lawful evil
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Lawful evil
   - Chances: 3
     subTables:
     - {fileID: 11400000, guid: 68eec92c15529cd4eb64a86abea23ba2, type: 2}
     - {fileID: 11400000, guid: aa5de66630129144dba0b05211d5c8ea, type: 2}
-    Name: Neutral evil
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Neutral evil
   - Chances: 2
     subTables:
     - {fileID: 11400000, guid: 6f1b528238ed76542af407a91755bdd4, type: 2}
     - {fileID: 11400000, guid: aa5de66630129144dba0b05211d5c8ea, type: 2}
-    Name: Chaotic evil
     Description:
-      Description: 
-      _editing: 0
+      Value: with {0} & {1} ideals
+      Editing: 0
+    Name: Chaotic evil

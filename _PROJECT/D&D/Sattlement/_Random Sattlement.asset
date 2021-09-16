@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaa7a4c98399e747adf0ec045fde088, type: 3}
   m_Name: _Random Sattlement
   m_EditorClassIdentifier: 
-  _sentenceFormat: 
+  _shortSentence:
+    Value: 
+    Editing: 0
+  Sentence:
+    Value: 
+    Editing: 0
   Tables:
+  - {fileID: 11400000, guid: 6519da73ea30d4547be43fc1ebc96c7e, type: 2}
   - {fileID: 11400000, guid: 1a60387d111a21d4a981e0a45bfabed3, type: 2}
   - {fileID: 11400000, guid: dfc1d583ab43efd4995cc765bbc4c067, type: 2}
   - {fileID: 11400000, guid: 05cb199592957ea48995262980351ffa, type: 2}

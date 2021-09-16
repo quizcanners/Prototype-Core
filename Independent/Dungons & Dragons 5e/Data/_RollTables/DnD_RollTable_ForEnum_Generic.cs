@@ -2,12 +2,10 @@ using QuizCanners.Inspect;
 using QuizCanners.Utils;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 namespace Dungeons_and_Dragons
 {
-
     public abstract class RollTable_ForEnum_Generic<T> : RollTableGeneric<RollTable_ForEnum_Generic<T>.Element>
     {
 
@@ -25,7 +23,6 @@ namespace Dungeons_and_Dragons
                 el.Roll(result.SubResultsList);
         }
 
-        private bool _inspectingRollResult;
         protected override void InspectInternal(RolledTable.Result result)
         {
             if (icon.Dice.Click())
@@ -38,9 +35,9 @@ namespace Dungeons_and_Dragons
                 el.Roll(result.SubResultsList);
             }
 
-            this.ClickHighlight();
+            this.ClickHighlight().nl();
 
-            if (el != null && icon.Enter.isEntered(ref _inspectingRollResult).nl())
+            if (el != null)
                 el.Inspect(result.SubResultsList);
         }
 
@@ -63,8 +60,7 @@ namespace Dungeons_and_Dragons
             return "{0} {1}".F(_dicesToRoll.ToDescription(), QcSharp.KeyToReadablaString(name.SimplifyTypeName())).edit_List(elements, ref _editedElement).nl();
         }
 
-
-        private void InspectSelect(RolledTable.Result result)
+        internal override void SelectInternal(RolledTable.Result result)
         {
             Element el = this[result];
             if (pegi.select(ref el, elements, stripSlashes: true) && el != null)
@@ -72,14 +68,15 @@ namespace Dungeons_and_Dragons
                 result.Roll = GetTargetRoll(elements, el);
                 el.Roll(result.SubResultsList);
             }
+
+            if (el != null)
+                el.TrySelectInspect(result.SubResultsList);
         }
 
         protected override void InspectInList_Internal(ref int edited, int index, RolledTable.Result result)
         {
-            if (icon.Enter.Click() || "{0} | {1}".F(index, nameof(T)).ClickLabel(width: 120))
+            if (icon.Enter.Click() || "{0} | {1}".F(index, typeof(T).ToPegiStringType()).ClickLabel(width: 120))
                 edited = index;
-
-            InspectSelect(result);
         }
 
         public override string GetRolledElementName(RolledTable.Result result)
@@ -114,87 +111,25 @@ namespace Dungeons_and_Dragons
 
 
         [Serializable]
-        public class Element : RollTableElementBase, IPEGI, IGotReadOnlyName
+        public class Element : RollTableElementWithSubTablesBase, IGotReadOnlyName
         {
             public T Value;
-            [SerializeField] List<RandomElementsRollTables> subTables = new List<RandomElementsRollTables>();
+    
+            public override string GetRolledElementName(List<RolledTable.Result> subTableResults) => "{0} {1}".F(pegi.GetNameForInspector(Value), base.GetRolledElementName(subTableResults)); 
             
-            public BigTextEditable Description;
-
-            public bool TryGetConcept<CT>(out CT value, RolledTable.Result result) where CT: IComparable => result.TryGetConcept(out value, subTables);
-
-            public string GetRolledElementName(List<RolledTable.Result> subTableResults)
-            {
-                StringBuilder sb = new StringBuilder(GetNameForInspector());
-
-                for (int i = 0; i < subTables.Count; i++)
-                {
-                    var subRoll = subTableResults.TryGet(i);
-
-                    if (subRoll != null && subRoll.IsRolled)
-                    {
-                        sb.Append("| ");
-                        sb.Append(subTables[i].GetRolledElementName(subRoll));
-                    }
-                }
-
-                return sb.ToString();
-            }
-
-            public void Roll(List<RolledTable.Result> results)
-            {
-                results.Clear();
-                foreach (var sub in subTables)
-                {
-                    var newRes = new RolledTable.Result();
-                    results.Add(newRes);
-                    sub.Roll(newRes);
-                }
-            }
-
             public override void Inspect(List<RolledTable.Result> subTablesRolls)
             {
-                if (_inspectedSubTable >= subTables.Count)
-                    _inspectedSubTable = -1;
-
-                if (subTables.Count == 1)
-                    _inspectedSubTable = 0;
-
-                if (_inspectedSubTable == -1)
-                {
+                if (inspectedSubTable == -1)
                     Description.Nested_Inspect(fromNewLine: false);
 
-                    for (int i = 0; i < subTables.Count; i++)
-                    {
-                        var t = subTables[i];
-                        var r = subTablesRolls.GetOrCreate(i);
-                        if (icon.Enter.Click() || t.GetRolledElementName(r).ClickLabel().nl())
-                            _inspectedSubTable = i;
-                    }
-                }
-                else
-                {
-                    if (subTables.Count > 1 && icon.Exit.Click())
-                        _inspectedSubTable = -1;
-                    else
-                    {
-                        subTables[_inspectedSubTable].Inspect(subTablesRolls.GetOrCreate(_inspectedSubTable));
-                    }
-                }
+                base.Inspect();
             }
 
             public override void InspectInList(ref int edited, int ind)
             {
-                base.InspectInList(ref edited, ind);
                 pegi.editEnum(ref Value);
-                if (subTables.Count < 2)
-                {
-                    RandomElementsRollTables tmp = subTables.TryGet(0);
-                    if (pegi.edit(ref tmp, 90))
-                        subTables.ForceSet(0, tmp);
-                }
-                else
-                    "X {0}".F(subTables.Count).write(40);
+
+                base.InspectInList(ref edited, ind);
 
                 if (icon.Enter.Click())
                     edited = ind;
@@ -202,19 +137,15 @@ namespace Dungeons_and_Dragons
 
             public string GetNameForInspector() => pegi.GetNameForInspector(Value);
 
-            private int _inspectedSubTable = -1;
 
-            public void Inspect()
+            public override void Inspect()
             {
-                if (_inspectedSubTable == -1)
+                if (inspectedSubTable == -1)
                     Description.Nested_Inspect(fromNewLine: false);
 
+                base.Inspect();
 
-                "Sub Table".edit_List_UObj(subTables, ref _inspectedSubTable);
             }
-
         }
     }
-
-  
 }

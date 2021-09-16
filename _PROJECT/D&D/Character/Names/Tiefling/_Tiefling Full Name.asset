@@ -16,5 +16,5 @@ MonoBehaviour:
     Value: '{0} {1}'
     Editing: 0
   Tables:
-  - {fileID: 11400000, guid: 450ea39bf97b8414a9aaf7da37448d3b, type: 2}
-  - {fileID: 11400000, guid: 6ed2715283d117a4aae73f1615f7f08c, type: 2}
+  - {fileID: 11400000, guid: fba1e4d84a4d9a547a73b05029271347, type: 2}
+  - {fileID: 11400000, guid: f74a160124775a645b3f68b70c6aa416, type: 2}

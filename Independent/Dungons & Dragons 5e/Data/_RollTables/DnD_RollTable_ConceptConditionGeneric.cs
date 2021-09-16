@@ -46,6 +46,14 @@ namespace Dungeons_and_Dragons
 
         public void Inspect()
         {
+            if (_elements.Count == 0 && "Auto-Fill".Click().nl())
+            {
+                var enumValues = Enum.GetValues(typeof(T));
+
+                foreach (var eVal in enumValues)
+                    _elements.Add(new Element() { Condition = (int)eVal });
+            }
+
             if (_inspectedElement == -1) 
                 "On Default".editEnum(ref _defaultOne).nl();
             
@@ -112,6 +120,12 @@ namespace Dungeons_and_Dragons
             public int Condition;
             public RandomElementsRollTables Table;
 
+            public T ConditionEnum 
+            {
+                get => (T)(object)Condition;
+                set => Condition = (int)(object)value;
+            }
+
             public bool TryGetConcept<CT>(out CT value, RolledTable.Result result) where CT : IComparable 
             {
                 if (Table)
@@ -121,8 +135,7 @@ namespace Dungeons_and_Dragons
                 return false;
             }
 
-
-            public string GetNameForInspector() => ((T)(object)Condition).ToString();
+            public string GetNameForInspector() => ConditionEnum.ToString();
 
             public void Roll(RolledTable.Result result)
             {
@@ -137,7 +150,7 @@ namespace Dungeons_and_Dragons
                     return "No Table";
                 }
 
-                return "{0} ({1})".F(Table.GetRolledElementName(result), GetNameForInspector());
+                return Table.GetRolledElementName(result); //"{0} ({1})".F(Table.GetRolledElementName(result), GetNameForInspector());
             }
 
             public void Inspect(RolledTable.Result result)

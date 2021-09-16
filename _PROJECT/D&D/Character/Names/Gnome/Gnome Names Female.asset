@@ -26,301 +26,301 @@ MonoBehaviour:
   elements:
   - Chances: 2
     subTables: []
-    Name: Akra
+    Name: Abalaba
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Aasathra
+    Name: Bimpnottin
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Antrara
+    Name: Breena
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Arava
+    Name: Buvvie
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Biri
+    Name: Callybon
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Blendaeth
+    Name: Caramip
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Burana
+    Name: Carlin
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Chassath
+    Name: Cumpen
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Daar
+    Name: Dalaba
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Dentratha
+    Name: Donella
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Doudra
+    Name: Duvamil
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Driindar
+    Name: Ella
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Eggren
+    Name: Ellyjoybell
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Farideh
+    Name: Ellywick
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Findex
+    Name: Enidda
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Furrele
+    Name: Lilli
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Gesrethe
+    Name: Loopmottin
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Gilkass
+    Name: Lorilla
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Harann
+    Name: Luthra
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Havilar
+    Name: Mardnab
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Hethress
+    Name: Meena
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Hillanot
+    Name: Menny
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Jaxi
+    Name: Mumpena
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Jezean
+    Name: Nissa
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Jheri
+    Name: Numba
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kadana
+    Name: Nyx
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kava
+    Name: Oda
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Korinn
+    Name: Oppah
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Megren
+    Name: Orla
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mijira
+    Name: Panana
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mishann
+    Name: Pyntle
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Nala
+    Name: Quilla
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Nuthra
+    Name: Ranala
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Perra
+    Name: Reddlepop
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Pogranix
+    Name: Roywyn
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Pyxrin
+    Name: Salanop
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Quespa
+    Name: Shamil
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Raiann
+    Name: Siffress
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Rezena
+    Name: Symma
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Ruloth
+    Name: Tana
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Saphara
+    Name: Tenena
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Savaran
+    Name: Tervaround
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Sora
+    Name: Tippletoe
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Surina
+    Name: Ulla
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Synthrin
+    Name: Unvera
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Tatyan
+    Name: Veloptima
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Thava
+    Name: Virra
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Uadjit
+    Name: Waywocket
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Vezera
+    Name: Yebe
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Zykroff
+    Name: Zanna
     Description:
       Description: 
       _editing: 0

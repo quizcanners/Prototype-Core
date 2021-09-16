@@ -33,11 +33,9 @@ namespace Dungeons_and_Dragons
         {
             if (icon.Enter.Click())
                 edited = index;
-
-            Inspect_Select(result);
         }
 
-        private void Inspect_Select(RolledTable.Result result) 
+        internal override void SelectInternal(RolledTable.Result result)
         {
             Element el = this[result];
             if ("Enemy".select(70, ref el, elements) && el != null)
@@ -51,7 +49,7 @@ namespace Dungeons_and_Dragons
             if (icon.Dice.Click())
                 Roll(result);
 
-            Inspect_Select(result);
+            SelectInternal(result);
 
             pegi.nl();
         }
@@ -94,7 +92,5 @@ namespace Dungeons_and_Dragons
         }
     }
     
-
     [PEGI_Inspector_Override(typeof(MonsterRollTable))] internal class MonsterRollTableDrawer : PEGI_Inspector_Override { }
-
 }

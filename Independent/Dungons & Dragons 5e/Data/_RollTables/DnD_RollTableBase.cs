@@ -54,11 +54,15 @@ namespace Dungeons_and_Dragons
 
         public abstract string GetRolledElementName(RolledTable.Result result);
 
+        internal virtual void SelectInternal(RolledTable.Result result) { }
+
         public void InspectInList(ref int edited, int index, RolledTable.Result result) 
         {
             using (result.AddAndUse(this))
             {
                 InspectInList_Internal(ref edited, index, result);
+
+                SelectInternal(result);
 
                 if (icon.Dice.Click())
                     Roll(result);

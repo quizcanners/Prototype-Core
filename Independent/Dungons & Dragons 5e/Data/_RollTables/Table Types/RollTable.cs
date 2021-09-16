@@ -27,8 +27,6 @@ namespace Dungeons_and_Dragons
                 el.Roll(result.SubResultsList);
         }
 
-
-        private bool _inspectingRollResult;
         protected override void InspectInternal(RolledTable.Result result)
         {
             if (icon.Dice.Click())
@@ -36,16 +34,16 @@ namespace Dungeons_and_Dragons
 
             Element el = Get(elements, result.Roll);
 
-            InspectSelect(result);
+            SelectInternal(result);
 
-            this.ClickHighlight();
+            this.ClickHighlight().nl();
 
-            if (el != null && icon.Enter.isEntered(ref _inspectingRollResult).nl())
+            if (el != null)// && icon.Enter.isEntered(ref _inspectingRollResult).nl())
                 el.Inspect(result.SubResultsList);
             
         }
 
-        private void InspectSelect(RolledTable.Result result) 
+        internal override void SelectInternal(RolledTable.Result result)
         {
             Element el = Get(elements, result.Roll);
             if (pegi.select(ref el, elements, stripSlashes: true) && el != null)
@@ -53,6 +51,9 @@ namespace Dungeons_and_Dragons
                 result.Roll = GetTargetRoll(elements, el);
                 el.Roll(result.SubResultsList);
             }
+
+            if (el != null)
+                el.TrySelectInspect(result.SubResultsList);
         }
 
         private int _editedElement = -1;
@@ -61,8 +62,6 @@ namespace Dungeons_and_Dragons
         {
             if (icon.Enter.Click() || "{0} | {1}".F(index, name.Replace("Random", "")).ClickLabel(width: 120))
                 edited = index;
-
-            InspectSelect(result);
         }
 
         protected override List<Element> List { get => elements; set => elements = value; }
@@ -95,45 +94,19 @@ namespace Dungeons_and_Dragons
         }
 
         [Serializable]
-        public class Element : RollTableElementBase, IPEGI, IGotName
+        public class Element : RollTableElementWithSubTablesBase, IGotName
         {
-            [SerializeField] List<RandomElementsRollTables> subTables = new List<RandomElementsRollTables>();
             public string Name;
-
-            public BigTextEditable Description;
 
             public string NameForInspector { get => Name; set => Name = value; }
 
-            public bool TryGetConcept<CT>(out CT value, RolledTable.Result result) where CT : IComparable => result.TryGetConcept(out value, subTables);
-
-
-            public string GetRolledElementName(List<RolledTable.Result> subTableResults)
+            public override string GetRolledElementName(List<RolledTable.Result> subTableResults)
             {
-               StringBuilder sb = new StringBuilder(Name);
+                var sub = base.GetRolledElementName(subTableResults);
+                if (sub.IsNullOrEmpty() == false)
+                    return "{0} {1}".F(Name, sub);
 
-               for( int i =0; i<subTables.Count; i++) 
-               {
-                    var subRoll = subTableResults.TryGet(i);
-
-                    if (subRoll!= null && subRoll.IsRolled) 
-                    {
-                        sb.Append("| ");
-                        sb.Append(subTables[i].GetRolledElementName(subRoll));
-                    }
-               }
-
-               return sb.ToString();
-            }
-
-            public void Roll(List<RolledTable.Result> results) 
-            {
-                results.Clear();
-                foreach(var sub in subTables) 
-                {
-                    var newRes = new RolledTable.Result();
-                    results.Add(newRes);
-                    sub.Roll(newRes);
-                }
+               return Name;
             }
 
             public override void Decode(string key, CfgData data)
@@ -144,71 +117,42 @@ namespace Dungeons_and_Dragons
                     case "name":
                         Name = data.ToString();
                         break;
-                    case "Description": Description.Description = data.ToString(); break;
+                    case "Description": Description.Value = data.ToString(); break;
                     default:   base.Decode(key, data); break;
                 }
             }
 
             public override void Inspect(List<RolledTable.Result> subTablesRolls) 
             {
-                if (_inspectedSubTable >= subTables.Count)
-                    _inspectedSubTable = -1;
-
-                if (subTables.Count == 1)
-                    _inspectedSubTable = 0;
-
-                if (_inspectedSubTable == -1)
-                {
+                if (inspectedSubTable == -1)
                     Description.Nested_Inspect(fromNewLine: false);
 
-                    for (int i = 0; i < subTables.Count; i++)
-                    {
-                        var t = subTables[i];
-                        var r = subTablesRolls.GetOrCreate(i);
-                        if (icon.Enter.Click() || t.GetRolledElementName(r).ClickLabel().nl())
-                            _inspectedSubTable = i;
-                    }
-                } else 
-                {
-                    if (subTables.Count>1 && icon.Exit.Click())
-                        _inspectedSubTable = -1;
-                    else
-                    {
-                        subTables[_inspectedSubTable].Inspect(subTablesRolls.GetOrCreate(_inspectedSubTable));
-                    }
-                }
+                base.Inspect();
             }
 
             public override void InspectInList(ref int edited, int ind)
             {
                 base.InspectInList(ref edited, ind);
-                pegi.edit(ref Name);
-                if (subTables.Count < 2)
-                {
-                    RandomElementsRollTables tmp = subTables.TryGet(0);
-                    if (pegi.edit(ref tmp, 90))
-                        subTables.ForceSet(0, tmp);
-                }
-                else
-                    "X {0}".F(subTables.Count).write(40);
 
+                pegi.edit(ref Name);
+              
                 if (icon.Enter.Click())
                     edited = ind;
             }
 
-            private int _inspectedSubTable = -1;
-
-            public void Inspect()
+            public override void Inspect()
             {
-                if (_inspectedSubTable == -1)
+                if (inspectedSubTable == -1)
+                {
                     Description.Nested_Inspect(fromNewLine: false);
-                
+                    Description.Value.write();
 
-                "Sub Table".edit_List_UObj(subTables, ref _inspectedSubTable);
+                    pegi.nl();
+                }
+                base.Inspect();
             }
         }
     }
 
     [PEGI_Inspector_Override(typeof(RollTable))] internal class RollTableDrawer : PEGI_Inspector_Override { }
-
 }

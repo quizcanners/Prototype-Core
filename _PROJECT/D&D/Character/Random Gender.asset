@@ -21,20 +21,20 @@ MonoBehaviour:
   _dicesToRoll: 14000000
   elements:
   - Chances: 12
+    subTables: []
+    Description:
+      Value: 
+      Editing: 0
     Value: 0
-    subTables: []
-    Description:
-      Description: 
-      _editing: 0
   - Chances: 7
+    subTables: []
+    Description:
+      Value: 
+      Editing: 0
     Value: 1
-    subTables: []
-    Description:
-      Description: 
-      _editing: 0
   - Chances: 1
-    Value: 2
     subTables: []
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Value: 2

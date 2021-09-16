@@ -3,6 +3,7 @@ using QuizCanners.Migration;
 using QuizCanners.Utils;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace Dungeons_and_Dragons
@@ -151,127 +152,36 @@ namespace Dungeons_and_Dragons
             }
 
 
+            pegi.nl();
+
+            if (typeof(RollTableElementWithSubTablesBase).IsAssignableFrom(typeof(T)))
+            {
+                if ("Description".isEntered(ref _inspectedStuff, ++groupIndex).nl())
+                {
+                    var el = List[0] as RollTableElementWithSubTablesBase;
+                    if (el != null)
+                    {
+                        el.Description.Nested_Inspect().nl();
+                    }
+
+                    if ("Copy Description to other elements".ClickConfirm(confirmationTag: "Will override whatever is there in other elements")) 
+                    {
+                        foreach(var e in List)
+                        {
+                            var sb = e as RollTableElementWithSubTablesBase;
+                            if (sb != null)
+                            {
+                                sb.Description.Value = el.Description.Value;
+                            }
+                        }
+                    }
+                }
+            }
 
         }
         #endregion
     }
 
-    [Serializable]
-    public class RollTableElementBase : IPEGI_ListInspect, ICfgDecode
-    {
-        protected DnDPrototypesScriptableObject Data => Service.TryGetValue<DnD_Service, DnDPrototypesScriptableObject>(s => s.DnDPrototypes);
 
-        public int Chances = 1;
-        [NonSerialized] private RollResult _rangeStart;
-
-        private static char[] SPLITBY = new char[] { '-', '–' };
-
-        public virtual void Decode(string key, CfgData data)
-        {
-            if (key == "Roll" || (key.Length>0 && key[0] == 'd'))
-            {
-                var val = data.ToString();
-
-                bool isRange = false;
-                foreach (var x in SPLITBY)
-                {
-                    if (val.Contains(x.ToString()))
-                    {
-                        isRange = true;
-                        break;
-                    }
-                }
-
-                if (isRange)
-                {
-                    var parts = val.Split(SPLITBY, StringSplitOptions.RemoveEmptyEntries);
-                    if (parts.Length > 1)
-                    {
-                        var from = new CfgData(parts[0]).ToInt();
-                        var to = new CfgData(parts[1]).ToInt();
-
-                        if (to == 0)
-                            to = 100;
-
-
-                        Chances = Math.Max(1, to - from + 1);
-                    }
-                }
-                else
-                    Chances = 1;
-
-                return;
-            }
-
-
-            switch (key)
-            {
-                case "Chances": Chances = data.ToInt(); break;
-            }
-
-        }
-
-
-        #region Inspector
-
-        public virtual void Inspect(List<RolledTable.Result> results) { }
-
-        public void SetRangeStart(ref RollResult rangeStart)
-        {
-            _rangeStart = rangeStart;
-            rangeStart += Chances;
-        }
-
-        public virtual void InspectInList(ref int edited, int ind)
-        {
-            string rangeString;
-
-            if (Chances > 1)
-                rangeString = "{0}-{1}".F(_rangeStart, _rangeStart + Chances - 1);
-            else
-                rangeString = (_rangeStart).ToString();
-
-            if (rangeString.edit(45, ref Chances, valueWidth: 35))
-                Chances = Mathf.Max(1, Chances);
-        }
-
-        #endregion
-
-        [Serializable]
-        public class BigTextEditable : IPEGI
-        {
-            public string Description;
-            [SerializeField] private bool _editing;
-
-            public void Inspect()
-            {
-                pegi.nl();
-                if (_editing)
-                {
-                    pegi.editBig(ref Description);
-                    if (icon.Done.Click())
-                        _editing = false;
-                }
-                else
-                {
-
-
-                    if (Description.IsNullOrEmpty())
-                    {
-                        if ("Add Description".Click())
-                            _editing = true;
-                    }
-                    else
-                    {
-                        Description.write(PEGI_Styles.OverflowText);
-
-                        if (icon.Edit.Click().nl())
-                            _editing = true;
-                    }
-                }
-                pegi.nl();
-            }
-        }
-    }
 
 }

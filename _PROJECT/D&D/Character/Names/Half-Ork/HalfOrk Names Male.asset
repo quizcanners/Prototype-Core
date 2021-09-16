@@ -26,301 +26,301 @@ MonoBehaviour:
   elements:
   - Chances: 2
     subTables: []
-    Name: Adrex
+    Name: Argran
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Arjhan
+    Name: Braak
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Azzakh
+    Name: Brug
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Balasar
+    Name: Cagak
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Baradad
+    Name: Dench
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Bharash
+    Name: Dorn
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Bidreked
+    Name: Dren
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Dadalan
+    Name: Druuk
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Dazzazn
+    Name: Feng
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Direcris
+    Name: Gell
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Donaar
+    Name: Gnarsh
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Fax
+    Name: Grumbar
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Gargax
+    Name: Gubrash
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Ghesh
+    Name: Hagren
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Gorbundus
+    Name: Henk
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Greethen
+    Name: Hogar
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Heskan
+    Name: Holg
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Hirrathak
+    Name: Imsh
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Ildrex
+    Name: Karash
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kaladan
+    Name: Karg
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kerkad
+    Name: Keth
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kiirith
+    Name: Korag
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Kriv
+    Name: Krusk
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Maagog
+    Name: Lubash
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Medrash
+    Name: Megged
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mehen
+    Name: Mhurren
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mozikth
+    Name: Mord
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mreksh
+    Name: Morg
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Mugrunden
+    Name: Nil
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Nadarr
+    Name: Nybarg
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Nithther
+    Name: Odorr
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Norkruuth
+    Name: Ohr
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Nykkan
+    Name: Rendar
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Pandjed
+    Name: Resh
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Patrin
+    Name: Ront
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Pijjirik
+    Name: Rrath
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Quarethon
+    Name: Sark
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Rathkran
+    Name: Scrag
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Rhogar
+    Name: Sheggen
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Rivaan
+    Name: Shump
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Sethrekar
+    Name: Tanglar
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Shamash
+    Name: Tarak
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Shedinn
+    Name: Thar
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Srorthen
+    Name: Thokk
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Tarhun
+    Name: Trag
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Torinn
+    Name: Ugarth
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Trynnicus
+    Name: Varg
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Valorean
+    Name: Vilberg
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Vrondiss
+    Name: Yurk
     Description:
       Description: 
       _editing: 0
   - Chances: 2
     subTables: []
-    Name: Zedaar
+    Name: Zed
     Description:
       Description: 
       _editing: 0

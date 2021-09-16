@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaa7a4c98399e747adf0ec045fde088, type: 3}
   m_Name: _Random NPC
   m_EditorClassIdentifier: 
+  _shortSentence:
+    Value: '{13}, a {2} {3}'
+    Editing: 0
   Sentence:
-    Value: 
+    Value: An {1} {2} {3} {0} named {13} alligned {4}
     Editing: 0
   Tables:
   - {fileID: 11400000, guid: b202c006b69430548aeb68b07c7c2f48, type: 2}

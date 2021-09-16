@@ -13,6 +13,8 @@ namespace Dungeons_and_Dragons
     {
         public const string FILE_NAME = "Group of Roll Tables";
 
+        [SerializeField] private BigTextEditable _shortSentence = new BigTextEditable();
+
         [SerializeField] private BigTextEditable Sentence = new BigTextEditable();
         public List<RandomElementsRollTables> Tables = new List<RandomElementsRollTables>();
 
@@ -36,58 +38,38 @@ namespace Dungeons_and_Dragons
         #region Inspector
         private int _inspectedTable = -1;
 
-        public override string GetRolledElementName(RolledTable.Result result)
-        {
-        
-            var arguments = new List<string>();
-
-                
-            for (int i = 0; i < Tables.Count; i++)
-            {
-                var t = Tables[i];
-                var r = result.SubResultsList.TryGet(i);
-       
-                if (r == null) 
-                {
-                    arguments.Add(" Not rolled");
-                    break;
-                }
-                arguments.Add(t.GetRolledElementName(r));
-            }
-
-            if (!Sentence.Value.IsNullOrEmpty())
-            {
-                try 
-                {
-                    var res = string.Format(Sentence.Value, arguments.ToArray());
-                    return res;
-
-                } catch {}
-            }
-            
-            var sb = new StringBuilder();
-
-            for (int i = 0; i < arguments.Count; i++)
-            {
-                var t = arguments[i];
-                sb.Append(t);
-                sb.Append(' ');
-            }
-
-            return sb.ToString();
-          
-        }
-
+        public override string GetRolledElementName(RolledTable.Result result) => Sentence.GetRolledElementName(result.SubResultsList, Tables);
+   
         public void Inspect()
         {
+            if (_inspectedTable == -1)
+            {
+                "Short Text".write(90);
+                _shortSentence.Nested_Inspect(fromNewLine: false);
+                if (!_shortSentence.Value.IsNullOrEmpty() && !_shortSentence.Editing)
+                    _shortSentence.Value.write(PEGI_Styles.OverflowText);
+                pegi.nl();
 
-            Sentence.Nested_Inspect();
+                "Long Text".write(90);
+                Sentence.Nested_Inspect(fromNewLine: false);
+                if (!Sentence.Value.IsNullOrEmpty() && !Sentence.Editing)
+                    Sentence.Value.write(PEGI_Styles.OverflowText);
+                pegi.nl();
 
-            if (!Sentence.Value.IsNullOrEmpty() && !Sentence.Editing)
-                Sentence.Value.write(PEGI_Styles.OverflowText);
+               
+            }
 
             pegi.nl();
             "Tables to execute".edit_List_UObj(Tables, ref _inspectedTable).nl();
+        }
+
+        protected override void InspectInList_Internal(ref int edited, int index, RolledTable.Result result)
+        {
+            string shortName = _shortSentence.Value.IsNullOrEmpty() ? "" : _shortSentence.GetRolledElementName(result.SubResultsList, Tables);
+
+            if (icon.Enter.Click() || "{0} | {1} {2}".F(index, this.GetNameForInspector().Replace("Random ", ""), shortName).ClickLabel())
+                edited = index;
+
         }
 
         protected override void InspectInternal(RolledTable.Result result)
@@ -97,14 +79,18 @@ namespace Dungeons_and_Dragons
 
             if (_inspectedTable == -1)
             {
-
                 pegi.line();
 
-                Sentence.Nested_Inspect();
+                "Short Text".write(90);
+                _shortSentence.Nested_Inspect(fromNewLine: false);
+                if (!_shortSentence.Value.IsNullOrEmpty())
+                    _shortSentence.GetRolledElementName(result.SubResultsList, Tables).write(PEGI_Styles.OverflowText);
+                pegi.nl();
 
+                "Long Text".write(90);
+                Sentence.Nested_Inspect(fromNewLine: false);
                 if (!Sentence.Value.IsNullOrEmpty()) 
                     GetRolledElementName(result).write(PEGI_Styles.OverflowText);
-
                 pegi.nl();
 
                 pegi.line();
@@ -143,41 +129,6 @@ namespace Dungeons_and_Dragons
             }
         }
         #endregion
-
-
-        [Serializable]
-        public class BigTextEditable : IPEGI
-        {
-            public string Value;
-            [SerializeField] public bool Editing;
-
-            public void Inspect()
-            {
-                pegi.nl();
-                if (Editing)
-                {
-                    pegi.editBig(ref Value);
-                    if (icon.Done.Click())
-                        Editing = false;
-
-                    "<- Click when you are done".writeHint();
-                    pegi.nl();
-                }
-                else
-                {
-                    if (Value.IsNullOrEmpty())
-                    {
-                        if ("Add Description".Click().nl())
-                            Editing = true;
-                    }
-                    else
-                    {
-                        if (icon.Edit.Click())
-                            Editing = true;
-                    }
-                }
-            }
-        }
 
     }
 

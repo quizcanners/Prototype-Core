@@ -25,74 +25,74 @@ MonoBehaviour:
   _dicesToRoll: 14000000
   elements:
   - Chances: 1
+    subTables: []
+    Description:
+      Value: 
+      Editing: 0
     Value: 0
+  - Chances: 1
     subTables: []
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 1
+      Value: 
+      Editing: 0
     Value: 1
+  - Chances: 2
     subTables: []
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 2
+      Value: 
+      Editing: 0
     Value: 2
+  - Chances: 1
     subTables: []
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 1
+      Value: 
+      Editing: 0
     Value: 3
-    subTables: []
-    Description:
-      Description: 
-      _editing: 0
   - Chances: 2
+    subTables: []
+    Description:
+      Value: 
+      Editing: 0
     Value: 4
+  - Chances: 1
     subTables: []
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 1
+      Value: 
+      Editing: 0
     Value: 5
+  - Chances: 1
     subTables: []
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 1
+      Value: 
+      Editing: 0
     Value: 6
+  - Chances: 1
     subTables: []
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 1
+      Value: 
+      Editing: 0
     Value: 7
+  - Chances: 4
     subTables: []
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 4
+      Value: 
+      Editing: 0
     Value: 8
+  - Chances: 1
     subTables: []
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 1
+      Value: 
+      Editing: 0
     Value: 9
-    subTables: []
-    Description:
-      Description: 
-      _editing: 0
   - Chances: 1
+    subTables: []
+    Description:
+      Value: 
+      Editing: 0
     Value: 10
-    subTables: []
-    Description:
-      Description: 
-      _editing: 0
   - Chances: 4
-    Value: 11
     subTables: []
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Value: 11
