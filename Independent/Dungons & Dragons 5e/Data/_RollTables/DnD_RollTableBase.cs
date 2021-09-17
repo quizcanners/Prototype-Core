@@ -11,11 +11,11 @@ namespace Dungeons_and_Dragons
         void Roll(RolledTable.Result result);
     }
 
-  
-
     public abstract class RandomElementsRollTables : ScriptableObject, IGotName, IRollResult, IPEGI_ListInspect
     {
         protected const string TABLE_CREATE_NEW_PATH = "Quiz Canners/Dungeons & Dragons/Roll Table/";
+
+        public virtual void UpdatePrototypes() { }
 
         public virtual bool TryGetConcept<CT>(out CT value, RolledTable.Result result) where CT : IComparable
         {

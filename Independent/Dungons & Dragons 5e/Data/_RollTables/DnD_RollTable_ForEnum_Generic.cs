@@ -15,6 +15,7 @@ namespace Dungeons_and_Dragons
 
         protected override List<Element> List { get => elements; set => elements = value; }
 
+
         protected override void RollInternal(RolledTable.Result result)
         {
             result.Roll = RollDices();
@@ -109,6 +110,13 @@ namespace Dungeons_and_Dragons
             return base.TryGetConcept(out value, result);
         }
 
+        public override void UpdatePrototypes()
+        {
+            base.UpdatePrototypes();
+
+            foreach (var el in elements)
+                el.UpdatePrototypes();
+        }
 
         [Serializable]
         public class Element : RollTableElementWithSubTablesBase, IGotReadOnlyName

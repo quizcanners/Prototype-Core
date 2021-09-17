@@ -11,7 +11,7 @@ namespace QuizCanners.IsItGame.Develop
         public string TagForConfig => "IigAdv";
 
         [SerializeField] private DictionaryOfLocations _locations = new DictionaryOfLocations();
-        [Serializable] private class DictionaryOfLocations : SerializableDictionary<string, AdventureNodesLocation> { }
+        [Serializable] private class DictionaryOfLocations : SerializableDictionary<string, AdventureNodesLocationScriptableObject> { }
 
         #region Encode & Decode
         public void Decode(string key, CfgData data)

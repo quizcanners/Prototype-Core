@@ -16,6 +16,15 @@ namespace Dungeons_and_Dragons
 
         public BigTextEditable Description;
 
+        public void UpdatePrototypes() 
+        {
+            foreach(var t in subTables) 
+            {
+                if (t)
+                    t.UpdatePrototypes();
+            }
+        }
+
         public bool TryGetConcept<CT>(out CT value, RolledTable.Result result) 
             where CT : IComparable => result.TryGetConcept(out value, subTables);
 

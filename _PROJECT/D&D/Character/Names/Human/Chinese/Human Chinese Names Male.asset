@@ -16,8 +16,8 @@ MonoBehaviour:
     editUrl: https://docs.google.com/spreadsheets/d/e/2PACX-1vRI9DqgmZQCeSHXMrRtNh9e_8fQLQB_8o3SmRucWSFO9-bcfHT4Lz6tyIsW8FdpeI-aYk6w1rNq8cDh/pub?output=csv
     url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTFSTYejGLPbFTtSwvDCWf7VOpPx90NYI0P36Ur7-Xad7I4lBIkNjpbLcoHRc5WKaG-jDkZ4k01UUpE/pub?
     pages:
-    - pageName: Half-Ork Male
-      pageIndex: 1958118055
+    - pageName: Chinese Male
+      pageIndex: 1443745230
     _selectedPage: 0
     columns:
     - d100
@@ -26,301 +26,301 @@ MonoBehaviour:
   elements:
   - Chances: 2
     subTables: []
-    Name: Argran
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Bingwen
   - Chances: 2
     subTables: []
-    Name: Braak
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Bo
   - Chances: 2
     subTables: []
-    Name: Brug
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Bolin
   - Chances: 2
     subTables: []
-    Name: Cagak
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Chang
   - Chances: 2
     subTables: []
-    Name: Dench
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Chao
   - Chances: 2
     subTables: []
-    Name: Dorn
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Chen
   - Chances: 2
     subTables: []
-    Name: Dren
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Cheng
   - Chances: 2
     subTables: []
-    Name: Druuk
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Da
   - Chances: 2
     subTables: []
+    Description:
+      Value: 
+      Editing: 0
+    Name: Dingxiang
+  - Chances: 2
+    subTables: []
+    Description:
+      Value: 
+      Editing: 0
+    Name: Fang
+  - Chances: 2
+    subTables: []
+    Description:
+      Value: 
+      Editing: 0
     Name: Feng
-    Description:
-      Description: 
-      _editing: 0
   - Chances: 2
     subTables: []
-    Name: Gell
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Fu
   - Chances: 2
     subTables: []
-    Name: Gnarsh
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Gang
   - Chances: 2
     subTables: []
-    Name: Grumbar
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Guang
   - Chances: 2
     subTables: []
-    Name: Gubrash
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Hai
   - Chances: 2
     subTables: []
-    Name: Hagren
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Heng
   - Chances: 2
     subTables: []
-    Name: Henk
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Hong
   - Chances: 2
     subTables: []
-    Name: Hogar
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Huan
   - Chances: 2
     subTables: []
-    Name: Holg
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Huang
   - Chances: 2
     subTables: []
-    Name: Imsh
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Huiliang
   - Chances: 2
     subTables: []
-    Name: Karash
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Huizhong
   - Chances: 2
     subTables: []
-    Name: Karg
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Jian
   - Chances: 2
     subTables: []
-    Name: Keth
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Jiayi
   - Chances: 2
     subTables: []
-    Name: Korag
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Junjie
   - Chances: 2
     subTables: []
-    Name: Krusk
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Kang
   - Chances: 2
     subTables: []
-    Name: Lubash
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Lei
   - Chances: 2
     subTables: []
-    Name: Megged
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Liang
   - Chances: 2
     subTables: []
-    Name: Mhurren
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Ling
   - Chances: 2
     subTables: []
-    Name: Mord
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Liwei
   - Chances: 2
     subTables: []
-    Name: Morg
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Meilin
   - Chances: 2
     subTables: []
-    Name: Nil
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Niu
   - Chances: 2
     subTables: []
-    Name: Nybarg
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Peizhi
   - Chances: 2
     subTables: []
-    Name: Odorr
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Peng
   - Chances: 2
     subTables: []
-    Name: Ohr
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Ping
   - Chances: 2
     subTables: []
-    Name: Rendar
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Qiang
   - Chances: 2
     subTables: []
-    Name: Resh
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Qiu
   - Chances: 2
     subTables: []
-    Name: Ront
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Quan
   - Chances: 2
     subTables: []
-    Name: Rrath
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Renshu
   - Chances: 2
     subTables: []
-    Name: Sark
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Rong
   - Chances: 2
     subTables: []
-    Name: Scrag
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Ru
   - Chances: 2
     subTables: []
-    Name: Sheggen
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Shan
   - Chances: 2
     subTables: []
-    Name: Shump
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Shen
   - Chances: 2
     subTables: []
-    Name: Tanglar
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Tengfei
   - Chances: 2
     subTables: []
-    Name: Tarak
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Wei
   - Chances: 2
     subTables: []
-    Name: Thar
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Xiaobo
   - Chances: 2
     subTables: []
-    Name: Thokk
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Xiaoli
   - Chances: 2
     subTables: []
-    Name: Trag
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Xin
   - Chances: 2
     subTables: []
-    Name: Ugarth
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Yang
   - Chances: 2
     subTables: []
-    Name: Varg
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Ying
   - Chances: 2
     subTables: []
-    Name: Vilberg
     Description:
-      Description: 
-      _editing: 0
-  - Chances: 2
-    subTables: []
-    Name: Yurk
-    Description:
-      Description: 
-      _editing: 0
-  - Chances: 2
-    subTables: []
-    Name: Zed
-    Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Zhong

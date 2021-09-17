@@ -16,8 +16,8 @@ MonoBehaviour:
     editUrl: https://docs.google.com/spreadsheets/d/e/2PACX-1vRI9DqgmZQCeSHXMrRtNh9e_8fQLQB_8o3SmRucWSFO9-bcfHT4Lz6tyIsW8FdpeI-aYk6w1rNq8cDh/pub?output=csv
     url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTFSTYejGLPbFTtSwvDCWf7VOpPx90NYI0P36Ur7-Xad7I4lBIkNjpbLcoHRc5WKaG-jDkZ4k01UUpE/pub?
     pages:
-    - pageName: Half-Ork Female
-      pageIndex: 1934250207
+    - pageName: Celtic Female
+      pageIndex: 85998150
     _selectedPage: 0
     columns:
     - d100
@@ -26,301 +26,301 @@ MonoBehaviour:
   elements:
   - Chances: 2
     subTables: []
-    Name: Arha
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Aife
   - Chances: 2
     subTables: []
-    Name: Baggi
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Aina
   - Chances: 2
     subTables: []
-    Name: Bendoo
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Alane
   - Chances: 2
     subTables: []
-    Name: Bilga
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Ardena
   - Chances: 2
     subTables: []
-    Name: Brakka
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Arienh
   - Chances: 2
     subTables: []
-    Name: Creega
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Beatha
   - Chances: 2
     subTables: []
-    Name: Drenna
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Birgit
   - Chances: 2
     subTables: []
-    Name: Ekk
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Briann
   - Chances: 2
     subTables: []
-    Name: Emen
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Caomh
   - Chances: 2
     subTables: []
-    Name: Engong
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Cara
   - Chances: 2
     subTables: []
-    Name: Fistula
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Cinnia
   - Chances: 2
     subTables: []
-    Name: Gaaki
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Cordelia
   - Chances: 2
     subTables: []
-    Name: Gorga
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Deheune
   - Chances: 2
     subTables: []
-    Name: Grai
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Divone
   - Chances: 2
     subTables: []
-    Name: Greeba
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Donia
   - Chances: 2
     subTables: []
-    Name: Grigi
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Doreena
   - Chances: 2
     subTables: []
-    Name: Gynk
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Elsha
   - Chances: 2
     subTables: []
-    Name: Hrathy
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Enid
   - Chances: 2
     subTables: []
-    Name: Huru
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Ethne
   - Chances: 2
     subTables: []
-    Name: Ilga
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Evelina
   - Chances: 2
     subTables: []
-    Name: Kabbarg
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Fianna
   - Chances: 2
     subTables: []
-    Name: Kansif
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Genevieve
   - Chances: 2
     subTables: []
-    Name: Lagazi
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Gilda
   - Chances: 2
     subTables: []
-    Name: Lezre
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Gitta
   - Chances: 2
     subTables: []
-    Name: Murgen
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Grania
   - Chances: 2
     subTables: []
-    Name: Murook
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Gwyndolin
   - Chances: 2
     subTables: []
-    Name: Myev
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Idelisa
   - Chances: 2
     subTables: []
-    Name: Nagrette
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Isolde
   - Chances: 2
     subTables: []
-    Name: Neega
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Keelin
   - Chances: 2
     subTables: []
-    Name: Nella
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Kennocha
   - Chances: 2
     subTables: []
-    Name: Nogu
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Lavena
   - Chances: 2
     subTables: []
-    Name: Oolah
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Lesley
   - Chances: 2
     subTables: []
-    Name: Ootah
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Linnette
   - Chances: 2
     subTables: []
-    Name: Ovak
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Lyonesse
   - Chances: 2
     subTables: []
-    Name: Ownka
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Mabina
   - Chances: 2
     subTables: []
-    Name: Puyet
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Marvina
   - Chances: 2
     subTables: []
-    Name: Reeza
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Mavis
   - Chances: 2
     subTables: []
-    Name: Shautha
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Mirna
   - Chances: 2
     subTables: []
-    Name: Silgre
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Morgan
   - Chances: 2
     subTables: []
-    Name: Sutha
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Muriel
   - Chances: 2
     subTables: []
-    Name: Tagga
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Nareena
   - Chances: 2
     subTables: []
-    Name: Tawar
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Oriana
   - Chances: 2
     subTables: []
-    Name: Tomph
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Regan
   - Chances: 2
     subTables: []
-    Name: Ubada
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Ronat
   - Chances: 2
     subTables: []
-    Name: Vanchu
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Rowena
   - Chances: 2
     subTables: []
-    Name: Vola
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Selma
   - Chances: 2
     subTables: []
-    Name: Volen
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Ula
   - Chances: 2
     subTables: []
-    Name: Vorka
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Venetia
   - Chances: 2
     subTables: []
-    Name: Yevelda
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Wynne
   - Chances: 2
     subTables: []
-    Name: Zagga
     Description:
-      Description: 
-      _editing: 0
+      Value: 
+      Editing: 0
+    Name: Yseult

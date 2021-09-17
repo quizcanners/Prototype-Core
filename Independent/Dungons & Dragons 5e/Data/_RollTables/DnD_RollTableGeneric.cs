@@ -1,9 +1,7 @@
 using QuizCanners.Inspect;
 using QuizCanners.Migration;
 using QuizCanners.Utils;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 namespace Dungeons_and_Dragons
@@ -48,6 +46,45 @@ namespace Dungeons_and_Dragons
 
             return null;//fromTable.TryGet(0);
         }
+
+
+        public override void UpdatePrototypes() 
+        {
+            if (_sheetParcer.IsDownloading() || !_sheetParcer.NeedAttention().IsNullOrEmpty())
+                return;
+
+            Service.Try<DnD_Service>(s => s.StartCoroutine(_sheetParcer.DownloadingCoro(
+                      onFinished: () =>
+                      {
+                          var slt = List;
+                          _sheetParcer.ToListOverride(ref slt);
+
+                          var cols = _sheetParcer.columns;
+
+                          var zeroCol = cols[0];
+
+                          if (zeroCol.IsNullOrEmpty() == false && zeroCol.Contains("d"))
+                          {
+                              var diceValue = zeroCol.Substring(1);
+
+                              if (int.TryParse(diceValue, out int dice))
+                              {
+                                  _dicesToRoll.Clear();
+                                  _dicesToRoll.Add((Dice)dice);
+                              }
+                          }
+
+                          foreach (var col in cols)
+                          {
+                              if (col.Equals("Name") || col.Equals("name"))
+                                  return;
+                          }
+
+                          Debug.LogError("Name column wasn't found in {0}. Replace {1} with Name".F(name, cols[cols.Count - 1]));
+
+                      })));
+        }
+
 
         #region Inspector
         protected int _inspectedStuff = -1;
@@ -103,7 +140,6 @@ namespace Dungeons_and_Dragons
 
             if (_inspectedStuff == groupIndex)  //"Download from Google Sheet".isEntered(ref _inspectedStuff, ++groupIndex).nl_ifEntered())
             {
-
                 if (_sheetParcer.IsDownloading())
                     "Downloading...".nl();
                 else if (_sheetParcer.IsDownloaded && "Update Table".Click())
@@ -117,38 +153,8 @@ namespace Dungeons_and_Dragons
             {
                 if (_sheetParcer.IsDownloading())
                     icon.Wait.draw();
-                else if ( _sheetParcer.NeedAttention().IsNullOrEmpty() && icon.Download.Click())
-                    Service.Try<DnD_Service>(s => s.StartCoroutine(_sheetParcer.DownloadingCoro(
-                        onFinished: () => 
-                        {
-                            var slt = List;
-                            _sheetParcer.ToListOverride(ref slt);
-
-                            var cols = _sheetParcer.columns;
-
-                            var zeroCol = cols[0];
-
-                            if (zeroCol.IsNullOrEmpty() == false && zeroCol.Contains("d"))
-                            {
-                                var diceValue = zeroCol.Substring(1);
-
-                                if (int.TryParse(diceValue, out int dice))
-                                {
-                                    _dicesToRoll.Clear();
-                                    _dicesToRoll.Add((Dice)dice);
-                                }
-                            }
-
-                            
-                            foreach (var col in cols)
-                            {
-                                if (col.Equals("Name") || col.Equals("name"))
-                                    return;
-                            }
-
-                            Debug.LogError("Name column wasn't found in {0}. Replace {1} with Name".F(name, cols[cols.Count-1]));
-
-                        } )));
+                else if (_sheetParcer.NeedAttention().IsNullOrEmpty() && icon.Download.Click())
+                    UpdatePrototypes();
             }
 
 

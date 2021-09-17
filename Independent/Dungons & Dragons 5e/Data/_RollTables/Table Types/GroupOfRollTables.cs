@@ -35,6 +35,15 @@ namespace Dungeons_and_Dragons
             return base.TryGetConcept(out value, result);
         }
 
+        public override void UpdatePrototypes()
+        {
+            base.UpdatePrototypes();
+
+            foreach (var el in Tables)
+                if (el)
+                    el.UpdatePrototypes();
+        }
+
         #region Inspector
         private int _inspectedTable = -1;
 
@@ -44,6 +53,9 @@ namespace Dungeons_and_Dragons
         {
             if (_inspectedTable == -1)
             {
+                if (pegi.Click(UpdatePrototypes).nl())
+                    Debug.Log("Update Prototypes Started");
+
                 "Short Text".write(90);
                 _shortSentence.Nested_Inspect(fromNewLine: false);
                 if (!_shortSentence.Value.IsNullOrEmpty() && !_shortSentence.Editing)
@@ -55,8 +67,6 @@ namespace Dungeons_and_Dragons
                 if (!Sentence.Value.IsNullOrEmpty() && !Sentence.Editing)
                     Sentence.Value.write(PEGI_Styles.OverflowText);
                 pegi.nl();
-
-               
             }
 
             pegi.nl();

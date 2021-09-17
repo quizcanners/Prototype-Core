@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaa7a4c98399e747adf0ec045fde088, type: 3}
   m_Name: _Human Full Name
   m_EditorClassIdentifier: 
+  _shortSentence:
+    Value: 
+    Editing: 0
   Sentence:
     Value: 
     Editing: 0

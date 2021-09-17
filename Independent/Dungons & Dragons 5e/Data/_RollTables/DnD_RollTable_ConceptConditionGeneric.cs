@@ -46,6 +46,8 @@ namespace Dungeons_and_Dragons
 
         public void Inspect()
         {
+            pegi.nl();
+
             if (_elements.Count == 0 && "Auto-Fill".Click().nl())
             {
                 var enumValues = Enum.GetValues(typeof(T));
@@ -171,8 +173,9 @@ namespace Dungeons_and_Dragons
 
             public void Inspect()
             {
-                "Condition".editEnum<T>(ref Condition).nl();
+                "Condition".editEnum<T>(90, ref Condition).nl();
                 pegi.edit(ref Table).nl();
+                pegi.Try_Nested_Inspect(Table);
                 
             }
         }

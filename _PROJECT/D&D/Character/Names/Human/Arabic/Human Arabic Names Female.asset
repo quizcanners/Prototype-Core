@@ -16,8 +16,8 @@ MonoBehaviour:
     editUrl: https://docs.google.com/spreadsheets/d/e/2PACX-1vRI9DqgmZQCeSHXMrRtNh9e_8fQLQB_8o3SmRucWSFO9-bcfHT4Lz6tyIsW8FdpeI-aYk6w1rNq8cDh/pub?output=csv
     url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTFSTYejGLPbFTtSwvDCWf7VOpPx90NYI0P36Ur7-Xad7I4lBIkNjpbLcoHRc5WKaG-jDkZ4k01UUpE/pub?
     pages:
-    - pageName: Half-Ork Female
-      pageIndex: 1934250207
+    - pageName: Arabic Female
+      pageIndex: 54165979
     _selectedPage: 0
     columns:
     - d100
@@ -29,298 +29,298 @@ MonoBehaviour:
     Description:
       Value: 
       Editing: 0
-    Name: Arha
+    Name: Aaliyah
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Baggi
+    Name: Aida
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Bendoo
+    Name: Akilah
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Bilga
+    Name: Alia
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Brakka
+    Name: Amina
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Creega
+    Name: Atefeh
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Drenna
+    Name: Chaima
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Ekk
+    Name: Dalia
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Emen
+    Name: Ehsan
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Engong
+    Name: Elham
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Fistula
+    Name: Farah
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Gaaki
+    Name: Fatemah
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Gorga
+    Name: Gamila
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Grai
+    Name: Iesha
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Greeba
+    Name: Inbar
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Grigi
+    Name: Kamaria
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Gynk
+    Name: Khadija
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Hrathy
+    Name: Layla
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Huru
+    Name: Lupe
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Ilga
+    Name: Nabila
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Kabbarg
+    Name: Nadine
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Kansif
+    Name: Naima
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Lagazi
+    Name: Najila
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Lezre
+    Name: Najwa
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Murgen
+    Name: Nakia
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Murook
+    Name: Nashwa
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Myev
+    Name: Nawra
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Nagrette
+    Name: Nuha
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Neega
+    Name: Nura
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Nella
+    Name: Oma
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Nogu
+    Name: Qadira
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Oolah
+    Name: Qamar
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Ootah
+    Name: Qistina
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Ovak
+    Name: Rahima
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Ownka
+    Name: Rihanna
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Puyet
+    Name: Saadia
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Reeza
+    Name: Sabah
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Shautha
+    Name: Sada
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Silgre
+    Name: Saffron
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Sutha
+    Name: Sahar
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Tagga
+    Name: Salma
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Tawar
+    Name: Shatha
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Tomph
+    Name: Tahira
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Ubada
+    Name: Takisha
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Vanchu
+    Name: Thana
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Vola
+    Name: Yadira
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Volen
+    Name: Zahra
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Vorka
+    Name: Zaida
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Yevelda
+    Name: Zaina
   - Chances: 2
     subTables: []
     Description:
       Value: 
       Editing: 0
-    Name: Zagga
+    Name: Zeinab
