@@ -47,3 +47,8 @@ MonoBehaviour:
       SkillToCheck: 12
       DC: 15
   _key: whitehawk
+  _entranceNode:
+    _book:
+      Id: Whitehawk.nodeConfig
+    _nodeIndex: 8
+    _nodeVersion: 15

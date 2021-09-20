@@ -27,7 +27,6 @@ namespace QuizCanners.IsItGame.Develop
         }
         #endregion
 
-
         #region Inspector
         private int _inspectedLocation = -1;
         public override void Inspect()

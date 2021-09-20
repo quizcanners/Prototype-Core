@@ -19,13 +19,11 @@ MonoBehaviour:
     values:
     - booleans:
         _dictionary:
-          keys:
-          - Some Stuff
+          keys: []
           values: []
       ints:
         _dictionary:
-          keys:
-          - Some other stuff
+          keys: []
           values: []
     - booleans:
         _dictionary:

@@ -317,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   books:
     keys:
-    - Whitehawk.key
+    - Whitehawk.nodeConfig
     values:
     - {fileID: 11400000, guid: 5ef6df669daeb07458fac73afd7d794a, type: 2}
 --- !u!1 &635623451
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 692272774}
   - component: {fileID: 692272775}
   m_Layer: 0
-  m_Name: Adventure nodes service
+  m_Name: Locations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

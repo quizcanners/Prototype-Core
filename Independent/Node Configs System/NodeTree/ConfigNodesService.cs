@@ -10,14 +10,13 @@ namespace QuizCanners.IsItGame.NodeNotes
     {
         [SerializeField] internal BooksDictionary books = new BooksDictionary();
 
-        [NonSerialized] private ConfigBook.Node.Reference _reference;
+        [NonSerialized] private ConfigBook.Node.FullReference _reference;
 
-
-        public void SetCurrent(ConfigBook.Node n) => _reference = new ConfigBook.Node.Reference(n);
+        public void SetCurrent(ConfigBook.Node n) => _reference = new ConfigBook.Node.FullReference(n);
         public bool IsCurrent(ConfigBook.Node node) => _reference != null && _reference.IsReferenceTo(node);
-        public bool IsCurrent(ConfigBook.Node.Reference reff) => _reference != null && _reference.SameAs(reff);
+        public bool IsCurrent(ConfigBook.Node.FullReference reff) => _reference != null && _reference.SameAs(reff);
 
-        public bool AnyEntered => _reference != null && _reference.GetNode() != null;
+        public bool AnyEntered => _reference != null && _reference.Node != null;
         
 
         [System.Serializable]
@@ -36,7 +35,7 @@ namespace QuizCanners.IsItGame.NodeNotes
             }
         }
 
-        public ConfigBook.Node this[ConfigBook.Node.Reference rff] 
+        public ConfigBook.Node this[ConfigBook.Node.FullReference rff] 
         {
             get {
                 var book = rff.GetBook();

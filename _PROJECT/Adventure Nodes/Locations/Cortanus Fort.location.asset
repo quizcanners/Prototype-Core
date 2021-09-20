@@ -31,3 +31,8 @@ MonoBehaviour:
       SkillToCheck: 12
       DC: 15
   _key: cortanus fort
+  _entranceNode:
+    _book:
+      Id: 
+    _nodeIndex: -1
+    _nodeVersion: -1

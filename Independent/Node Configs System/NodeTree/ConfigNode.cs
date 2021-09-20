@@ -9,15 +9,33 @@ namespace QuizCanners.IsItGame.NodeNotes
 {
     public partial class ConfigBook
     {
-        [Serializable]
-        public partial class Node : IPEGI, IGotIndex, IPEGI_ListInspect, IGotName, IGotCount
+
+        public partial class Node : IGotIndex, IGotName, IGotCount, ICfg, IPEGI, IPEGI_ListInspect
         {
-            [SerializeField] private string _name;
-            [SerializeField] private int _index;
-            [SerializeField] private int _version;
-            [SerializeField] private Reference _parentNode;
-            [SerializeField] private List<Reference> _childNodes = new List<Reference>();
-            [SerializeField] private ConfigsDictionary configs = new ConfigsDictionary();
+            private string _name;
+            private int _index;
+            private List<Node> _childNodes = new List<Node>();
+            private ConfigsDictionary configs = new ConfigsDictionary();
+
+            #region Encode & Decode
+
+            public CfgEncoder Encode()
+            {
+                var cody = new CfgEncoder()
+                    .Add_String("n", _name)
+                    .Add("i", _index)
+                    .Add("c", _childNodes);
+
+                return cody;
+            }
+
+            public void Decode(string key, CfgData data)
+            {
+
+            }
+
+            #endregion
+
 
             private ConfigNodesService Mgmt => Service.Get<ConfigNodesService>();
 
@@ -39,24 +57,16 @@ namespace QuizCanners.IsItGame.NodeNotes
 
                 foreach (var ch in _childNodes)
                 {
-                    var n = ch.GetNode();
-
-                    if (n.IsEntered_Internal())
+                    if (ch.IsEntered_Internal())
                         return true;
                 }
                 return false;
             }
 
-
             public bool TryGetConfig (ITaggedCfg val, out CfgData dta) 
             {
                 if (configs.TryGetValue(val.TagForConfig, out dta)) 
                     return true;
-
-                var parent = _parentNode.GetNode();
-
-                if (parent != null)
-                    return parent.TryGetConfig(val, out dta);
 
                 return false;
             }
@@ -68,11 +78,6 @@ namespace QuizCanners.IsItGame.NodeNotes
                     SetConfigOnTheNode(val, dta);
                     return true;
                 }
-
-                var parent = _parentNode.GetNode();
-
-                if (parent != null)
-                    return parent.TryUpdateConfigUpTheHierarchy(val, dta);
                 
                 return false;
             }
@@ -83,9 +88,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                 Service.Try<ConfigNodesService>(s => s.SetToDirty());
             }
 
-            public Reference GetReference => new Reference(this);
-
-            public ConfigBook GetBook() => _parentNode.GetBook();
+            public FullReference GetReference => new FullReference(this);
 
             public int IndexForInspector
             {
@@ -105,27 +108,18 @@ namespace QuizCanners.IsItGame.NodeNotes
             private void Initialize(ConfigBook book) 
             {
                 _index = book._freeNodeIndex;
-                _version = book._nodesVersion;
                 book._freeNodeIndex++;
-                book._nodesVersion++;
-
-                book._nodes.Add(this);
-               
             }
 
             internal Node(ConfigBook book)
             {
                 Initialize(book);
-                _parentNode = new Reference(book);
                 _name = "ROOT";
             }
 
-            public Node(Node parent)
+            public Node()
             {
-                Initialize(parent.GetBook());
-                _parentNode = new Reference(parent);
-                parent._childNodes.Add(new Reference(this));
-                _name = "Node {0}".F(_index);
+
             }
 
             #region Inspector
@@ -155,29 +149,37 @@ namespace QuizCanners.IsItGame.NodeNotes
                     _collectionMeta.Label = _name;
                     _collectionMeta.edit_List(_childNodes).nl();
 
-                    if (_collectionMeta.IsInspectingElement == false && "Add Node".Click().nl())
-                        new Node(this);
+                   // if (_collectionMeta.IsInspectingElement == false && "Add Node".Click().nl())
+                      //  new Node(this);
                 }
             }
 
             public void InspectInList(ref int edited, int ind)
             {
+
+                if (icon.Enter.Click())
+                    edited = ind;
+
+                if ("ID {0}  [{1} brchs]".F(_index, GetCount()).ClickLabel(width: 120))
+                    edited = ind;
+
+                pegi.inspect_Name(this);
+
                 if (Mgmt.AnyEntered == false)
                 {
                     if (icon.Play.Click("Enter this Node"))
                         Mgmt.SetCurrent(this);
                 }
-                else if (Mgmt.IsCurrent(this))
+               /* else if (Mgmt.IsCurrent(this))
                 {
-                    if (_parentNode.GetNode() != null)
+                    if (_parentNode.Node != null)
                     {
                         if ("To Prev".Click())
-                            Mgmt.SetCurrent(_parentNode.GetNode());
+                            Mgmt.SetCurrent(_parentNode.Node);
                     }
                     else
                         icon.Active.draw();
-
-                }
+                }*/
                 else if (IsEntered)
                 {
                     if ("Back Here".Click())
@@ -186,12 +188,6 @@ namespace QuizCanners.IsItGame.NodeNotes
                 else if ("Set".Click())
                     Mgmt.SetCurrent(this);
 
-                "ID {0}  [{1} brchs]".F(_index, GetCount()).write(90);
-
-                pegi.inspect_Name(this);
-
-                if (icon.Enter.Click())
-                    edited = ind;
             }
             #endregion
 
