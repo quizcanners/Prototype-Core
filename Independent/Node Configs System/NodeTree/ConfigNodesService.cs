@@ -10,17 +10,18 @@ namespace QuizCanners.IsItGame.NodeNotes
     {
         [SerializeField] internal BooksDictionary books = new BooksDictionary();
 
-        [NonSerialized] private ConfigBook.Node.FullReference _reference;
+        [NonSerialized] private ConfigBookScriptableObject.Node.Reference _reference;
 
-        public void SetCurrent(ConfigBook.Node n) => _reference = new ConfigBook.Node.FullReference(n);
-        public bool IsCurrent(ConfigBook.Node node) => _reference != null && _reference.IsReferenceTo(node);
-        public bool IsCurrent(ConfigBook.Node.FullReference reff) => _reference != null && _reference.SameAs(reff);
 
-        public bool AnyEntered => _reference != null && _reference.Node != null;
+        public void SetCurrent(ConfigBookScriptableObject.NodesChain chain) => _reference = chain.GetReferenceToLastNode();
+        public bool IsCurrent(ConfigBookScriptableObject.Node node) => _reference != null && _reference.IsReferenceTo(node);
+        public bool IsCurrent(ConfigBookScriptableObject.Node.Reference reff) => _reference != null && _reference.SameAs(reff);
+
+        public bool AnyEntered => _reference != null && _reference.GenerateNodeChain().LastNode != null;
         
 
-        [System.Serializable]
-        internal class BooksDictionary: SerializableDictionary<string, ConfigBook> 
+        [Serializable]
+        internal class BooksDictionary: SerializableDictionary<string, ConfigBookScriptableObject> 
         {
             public override void Inspect()
             {
@@ -28,14 +29,14 @@ namespace QuizCanners.IsItGame.NodeNotes
 
                 if (!CollectionMeta.IsInspectingElement)
                 {
-                    ConfigBook tmp = null;
+                    ConfigBookScriptableObject tmp = null;
                     if ("Add Book".edit(ref tmp).nl() && tmp && ContainsKey(tmp.name) == false)
                         Add(tmp.name, tmp);
                 }
             }
         }
 
-        public ConfigBook.Node this[ConfigBook.Node.FullReference rff] 
+        public ConfigBookScriptableObject.NodesChain this[ConfigBookScriptableObject.Node.Reference rff] 
         {
             get {
                 var book = rff.GetBook();
@@ -45,15 +46,16 @@ namespace QuizCanners.IsItGame.NodeNotes
 
         #region Inspect
 
-        private int _inspectedStuff = -1;
+       // private int _inspectedStuff = -1;
 
         public override void Inspect()
         {
-            pegi.nl();
-            "All Books".enter_Inspect(books, ref _inspectedStuff, 0).nl();
+            books.Nested_Inspect();
+           // pegi.nl();
+           // "All Books".enter_Inspect(books, ref _inspectedStuff, 0).nl();
 
-            if ("Current".isConditionally_Entered(AnyEntered, ref _inspectedStuff, 1).nl())
-                _reference.Nested_Inspect();
+           // if ("Current".isConditionally_Entered(AnyEntered, ref _inspectedStuff, 1).nl())
+             //   _reference.Nested_Inspect();
         }
         #endregion
     }

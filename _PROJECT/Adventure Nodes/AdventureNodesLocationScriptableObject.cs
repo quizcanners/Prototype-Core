@@ -15,7 +15,7 @@ namespace QuizCanners.IsItGame.Develop
         public List<AdventureNodeSkillCheck> SkillChecks = new List<AdventureNodeSkillCheck>();
 
         [SerializeField] private string _key;
-        [SerializeField] private ConfigBook.Node.FullReference _entranceNode = new ConfigBook.Node.FullReference();
+        [SerializeField] private ConfigBookScriptableObject.Node.Reference _entranceNode = new ConfigBookScriptableObject.Node.Reference();
 
         #region Inspector
         private int _inspectedStuff = -1;

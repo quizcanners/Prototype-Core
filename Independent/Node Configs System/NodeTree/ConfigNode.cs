@@ -7,15 +7,38 @@ using UnityEngine;
 
 namespace QuizCanners.IsItGame.NodeNotes
 {
-    public partial class ConfigBook
+    public partial class ConfigBookScriptableObject
     {
 
-        public partial class Node : IGotIndex, IGotName, IGotCount, ICfg, IPEGI, IPEGI_ListInspect
+        public partial class Node : IGotIndex, IGotName, IGotCount, ICfg, IPEGI_ListInspect, IPEGI
         {
-            private string _name;
+            private string _name = "UNNAMED";
             private int _index;
             private List<Node> _childNodes = new List<Node>();
             private ConfigsDictionary configs = new ConfigsDictionary();
+
+            public bool TryGet(Reference reff, NodesChain result) 
+            {
+                var token = result.AddAndUse(this);
+
+                if (_index == reff.NodeIndex) 
+                    return true;
+                
+                foreach (var n in _childNodes)
+                    if (n.TryGet(reff, result))
+                        return true;
+
+                token.Dispose();
+
+                return false;
+            }
+
+            internal void PopulateAllNodes(List<Node> list) 
+            {
+                list.Add(this);
+                foreach (var n in _childNodes)
+                    n.PopulateAllNodes(list);
+            }
 
             #region Encode & Decode
 
@@ -29,15 +52,20 @@ namespace QuizCanners.IsItGame.NodeNotes
                 return cody;
             }
 
+
             public void Decode(string key, CfgData data)
             {
-
+                switch (key) {
+                    case "n": _name = data.ToString(); break;
+                    case "i": _index = data.ToInt(); break;
+                    case "c": data.ToList(out _childNodes); break;
+                }
             }
 
             #endregion
 
-
             private ConfigNodesService Mgmt => Service.Get<ConfigNodesService>();
+
 
             public bool IsEntered 
             { 
@@ -63,7 +91,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                 return false;
             }
 
-            public bool TryGetConfig (ITaggedCfg val, out CfgData dta) 
+            internal bool TryGetConfig (ITaggedCfg val, out CfgData dta) 
             {
                 if (configs.TryGetValue(val.TagForConfig, out dta)) 
                     return true;
@@ -71,7 +99,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                 return false;
             }
 
-            public bool TryUpdateConfigUpTheHierarchy(ITaggedCfg val, CfgData dta)
+           /* public bool TryUpdateConfigUpTheHierarchy(ITaggedCfg val, CfgData dta)
             {
                 if (configs.ContainsKey(val.TagForConfig))
                 {
@@ -80,15 +108,13 @@ namespace QuizCanners.IsItGame.NodeNotes
                 }
                 
                 return false;
-            }
+            }*/
 
             public void SetConfigOnTheNode(ITaggedCfg val, CfgData dta)
             {
                 configs[val.TagForConfig] = dta;
                 Service.Try<ConfigNodesService>(s => s.SetToDirty());
             }
-
-            public FullReference GetReference => new FullReference(this);
 
             public int IndexForInspector
             {
@@ -105,21 +131,22 @@ namespace QuizCanners.IsItGame.NodeNotes
                 set => _name = value;
             }
 
-            private void Initialize(ConfigBook book) 
+            private void Initialize(ConfigBookScriptableObject book) 
             {
                 _index = book._freeNodeIndex;
                 book._freeNodeIndex++;
+                book.OnNodeTreeChanged();
             }
 
-            internal Node(ConfigBook book)
+            internal Node(ConfigBookScriptableObject book)
             {
                 Initialize(book);
-                _name = "ROOT";
+                _name = IndexForInspector.ToString();
             }
 
             public Node()
             {
-
+                _name = "ROOT";
             }
 
             #region Inspector
@@ -128,67 +155,115 @@ namespace QuizCanners.IsItGame.NodeNotes
             public int GetCount() => _childNodes.Count;
 
             [NonSerialized] private bool _showConfigs;
+            private static string _inspectedService = "";
 
-            public void Inspect()
+
+            public void Inspect(NodesChain myChain) 
             {
-                if (Mgmt.IsCurrent(this))
+                if ("Configurations".isConditionally_Entered(canEnter: Mgmt.IsCurrent(this), ref _showConfigs).nl())
                 {
-                    if ("Configurations".isEntered(ref _showConfigs).nl())
-                    {
+                    var lst = Service.GetAll<ITaggedCfg>();
 
+                    bool inspectingService = !_inspectedService.IsNullOrEmpty();
+
+                    if (inspectingService && "Exit {0}".F(_inspectedService).Click())
+                        _inspectedService = "";
+
+                    foreach (var s in lst)
+                    {
+                        var tag = s.TagForConfig;
+
+                        if (inspectingService)
+                        {
+                            if (tag.Equals(_inspectedService))
+                            {
+                                pegi.Try_Nested_Inspect(s);
+                            }
+                        }
+                        else
+                        {
+                            if (configs.ContainsKey(tag))
+                            {
+                                if (icon.Save.Click("Save Changes"))
+                                    configs[tag] = s.Encode().CfgData;
+                            }
+                            else
+                            {
+                                if (icon.SaveAsNew.Click("Create Settings Override for this node"))
+                                    configs[tag] = s.Encode().CfgData;
+                            }
+
+                            // TODO: Fallback to parent nodes to save changes
+                            if (icon.Enter.Click() || s.GetNameForInspector().ClickLabel())
+                                _inspectedService = s.TagForConfig;
+
+                        }
                     }
+
+                    //configs.Nested_Inspect();
                 }
-                else _showConfigs = false;
 
                 if (!_showConfigs)
                 {
-
                     if (_collectionMeta == null)
                         _collectionMeta = new CollectionMetaData(_name, showAddButton: false, allowDeleting: false, showEditListButton: false);
 
                     _collectionMeta.Label = _name;
                     _collectionMeta.edit_List(_childNodes).nl();
 
-                   // if (_collectionMeta.IsInspectingElement == false && "Add Node".Click().nl())
-                      //  new Node(this);
+                    if (_collectionMeta.IsInspectingElement == false && "Add Node".Click().nl())
+                        _childNodes.Add(new Node(_chain_ForInspector.Book));
+                }
+            }
+
+            public void Inspect()
+            {
+                using (InspectChainUse())
+                {
+                    Inspect(_chain_ForInspector);
                 }
             }
 
             public void InspectInList(ref int edited, int ind)
             {
 
-                if (icon.Enter.Click())
-                    edited = ind;
-
-                if ("ID {0}  [{1} brchs]".F(_index, GetCount()).ClickLabel(width: 120))
-                    edited = ind;
-
-                pegi.inspect_Name(this);
-
-                if (Mgmt.AnyEntered == false)
+                using (InspectChainUse())
                 {
-                    if (icon.Play.Click("Enter this Node"))
-                        Mgmt.SetCurrent(this);
-                }
-               /* else if (Mgmt.IsCurrent(this))
-                {
-                    if (_parentNode.Node != null)
+                    if (icon.Enter.Click())
+                        edited = ind;
+
+                    if ("ID {0}  [{1} brchs]".F(_index, GetCount()).ClickLabel(width: 120))
+                        edited = ind;
+
+                    pegi.inspect_Name(this);
+
+                    if (Mgmt.AnyEntered == false)
                     {
-                        if ("To Prev".Click())
-                            Mgmt.SetCurrent(_parentNode.Node);
+                        if (icon.Play.Click("Enter this Node"))
+                            Mgmt.SetCurrent(_chain_ForInspector);
                     }
-                    else
-                        icon.Active.draw();
-                }*/
-                else if (IsEntered)
-                {
-                    if ("Back Here".Click())
-                        Mgmt.SetCurrent(this);
+                    /* else if (Mgmt.IsCurrent(this))
+                     {
+                         if (_parentNode.Node != null)
+                         {
+                             if ("To Prev".Click())
+                                 Mgmt.SetCurrent(_parentNode.Node);
+                         }
+                         else
+                             icon.Active.draw();
+                     }*/
+                    else if (IsEntered)
+                    {
+                        if ("Back Here".Click())
+                            Mgmt.SetCurrent(_chain_ForInspector);
+                    }
+                    else if ("Set".Click())
+                        Mgmt.SetCurrent(_chain_ForInspector);
                 }
-                else if ("Set".Click())
-                    Mgmt.SetCurrent(this);
-
             }
+
+            private IDisposable InspectChainUse() => _chain_ForInspector.AddAndUse(this);
+
             #endregion
 
             private class ConfigsDictionary : SerializableDictionary<string, CfgData> { }

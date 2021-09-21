@@ -50,5 +50,4 @@ MonoBehaviour:
   _entranceNode:
     _book:
       Id: Whitehawk.nodeConfig
-    _nodeIndex: 8
-    _nodeVersion: 15
+    NodeIndex: 31

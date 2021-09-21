@@ -67,25 +67,6 @@ namespace Dungeons_and_Dragons
             }
             #endregion
 
-            private static List<ResultChainToken> _tablesChain = new List<ResultChainToken>();
-
-            public bool TryGetConceptFromUpperChain<T>(out T value) where T: IComparable
-            {
-                for (int i= _tablesChain.Count-1; i>=0; i--) 
-                {
-                    ResultChainToken chainToken = _tablesChain[i];
-
-                    if (chainToken.Table.TryGetConcept<T>(out value, chainToken.Result)) 
-                    {
-                        return true;
-                    }
-                }
-
-                value = default(T);
-                return false;
-            }
-
-            
             public bool TryGetConcept<CT>(out CT value, List<RandomElementsRollTables> tables) where CT: IComparable
             {
                 for (int i = 0; i < tables.Count; i++)
@@ -106,7 +87,25 @@ namespace Dungeons_and_Dragons
             }
 
             public IDisposable AddAndUse (RandomElementsRollTables table) => new ResultChainToken(this, table);
-            
+
+            private static List<ResultChainToken> _tablesChain = new List<ResultChainToken>();
+
+            public bool TryGetConceptFromUpperChain<T>(out T value) where T : IComparable
+            {
+                for (int i = _tablesChain.Count - 1; i >= 0; i--)
+                {
+                    ResultChainToken chainToken = _tablesChain[i];
+
+                    if (chainToken.Table.TryGetConcept<T>(out value, chainToken.Result))
+                    {
+                        return true;
+                    }
+                }
+
+                value = default(T);
+                return false;
+            }
+
             private class ResultChainToken : IDisposable
             {
                 public Result Result;
@@ -122,7 +121,6 @@ namespace Dungeons_and_Dragons
                     _tablesChain.Add(this);
                 }
             }
-
         }
 
         public struct BranchIndex { public int Index; }

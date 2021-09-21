@@ -6,26 +6,11 @@ using UnityEngine;
 
 namespace QuizCanners.IsItGame.Develop
 {
-    public class AdventureLocationsService : IsItGameServiceBase, ITaggedCfg
+    public class AdventureLocationsService : IsItGameServiceBase
     {
-        public string TagForConfig => "IigAdv";
 
         [SerializeField] private DictionaryOfLocations _locations = new DictionaryOfLocations();
         [Serializable] private class DictionaryOfLocations : SerializableDictionary<string, AdventureNodesLocationScriptableObject> { }
-
-        #region Encode & Decode
-        public void Decode(string key, CfgData data)
-        {
-
-        }
-
-        public CfgEncoder Encode()
-        {
-            var cody = new CfgEncoder();
-
-            return cody;
-        }
-        #endregion
 
         #region Inspector
         private int _inspectedLocation = -1;

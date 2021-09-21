@@ -6,14 +6,14 @@ using UnityEngine;
 namespace QuizCanners.IsItGame.NodeNotes
 {
 
-    public partial class ConfigBook
+    public partial class ConfigBookScriptableObject
     {
         [Serializable]
-        public class BookReference : SmartStringIdGeneric<ConfigBook>,  IPEGI
+        public class BookReference : SmartStringIdGeneric<ConfigBookScriptableObject>,  IPEGI
         {
-            public bool IsReferenceOf(ConfigBook book) => book.NameForInspector.Equals(Id);
-            protected override SerializableDictionary<string, ConfigBook> GetEnities() => Service.Get<ConfigNodesService>().books;
-            public BookReference(ConfigBook book) 
+            public bool IsReferenceOf(ConfigBookScriptableObject book) => book.NameForInspector.Equals(Id);
+            protected override SerializableDictionary<string, ConfigBookScriptableObject> GetEnities() => Service.Get<ConfigNodesService>().books;
+            public BookReference(ConfigBookScriptableObject book) 
             {
                 if (book!= null)
                     Id = book.NameForInspector;
@@ -25,13 +25,14 @@ namespace QuizCanners.IsItGame.NodeNotes
         public partial class Node 
         {
             [Serializable]
-            public class FullReference : IPEGI, IPEGI_ListInspect, IGotReadOnlyName, INeedAttention
+            public class Reference : IPEGI, IPEGI_ListInspect, IGotReadOnlyName, INeedAttention
             {
                 [SerializeField] private BookReference _book;
-                [SerializeField] private int _nodeIndex = -1;
-                [SerializeField] private int _nodeVersion = -1;
+                [SerializeField] public int NodeIndex = -1;
 
-                public ConfigBook Book 
+                [NonSerialized] private NodesChain _cachedChain;
+
+                public ConfigBookScriptableObject Book 
                 {
                     get => _book.GetEntity();
                     set 
@@ -40,27 +41,17 @@ namespace QuizCanners.IsItGame.NodeNotes
                     }
                 }
 
-                public Node Node 
+                public NodesChain GenerateNodeChain()
                 {
-                    get => Service.Get<ConfigNodesService>()[this];//GetNode();
-                    set
-                    {
-                        if (value == null) 
-                        {
-                            _book = new BookReference();
-                            _nodeIndex = -1;
-                            _nodeVersion = -1;
-                        } else 
-                        {
-                            _nodeIndex = value.IndexForInspector;
-                        }
-                    }
+                    if (_cachedChain == null)
+                        _cachedChain = Service.Get<ConfigNodesService>()[this];
+                    
+                    return _cachedChain;
                 }
 
-                public int NodeIndex => _nodeIndex;
-                public bool IsReferenceTo(Node node) => node != null && node._index == _nodeIndex;
-                public bool SameAs(FullReference reff) => reff._book.SameAs(_book) && reff._nodeIndex == _nodeIndex && reff._nodeVersion == _nodeVersion;
-                public ConfigBook GetBook() => _book.GetEntity();
+                public bool IsReferenceTo(Node node) => node != null && node._index == NodeIndex;
+                public bool SameAs(Reference reff) => reff._book.SameAs(_book) && reff.NodeIndex == NodeIndex;
+                public ConfigBookScriptableObject GetBook() => _book.GetEntity();
 
                 #region Inspector
 
@@ -72,21 +63,19 @@ namespace QuizCanners.IsItGame.NodeNotes
                     if (book == null || "Book ({0})".F(_book.GetNameForInspector()).isEntered(ref _inspectedStuff, 0).nl())
                         _book.Inspect();
                     
-                    if ("Node ({0})".F(Node.GetNameForInspector()).isEntered(ref _inspectedStuff, 1))
+                    var chain = GenerateNodeChain();
+
+                    if ("Node ({0})".F(chain.GetNameForInspector()).isEntered(ref _inspectedStuff, 1))
                     {
                         pegi.nl();
-                       /* if (book != null)
-                        {
-                            if ("Node".select_Index(ref _nodeIndex, book._nodes))
-                                Node = book._nodes[_nodeIndex];
-                        }*/
-
-                        if (Node != null)
-                            Node.Nested_Inspect();
+                        if (book != null)
+                            "Node".select_iGotIndex(ref NodeIndex, book.GetAllNodes());
+                                
+                        if (chain != null)
+                            chain.Nested_Inspect();
                     }
 
                     pegi.nl();
-
                 }
 
                 public void InspectInList(ref int edited, int ind)
@@ -97,22 +86,16 @@ namespace QuizCanners.IsItGame.NodeNotes
                         _book.InspectInList(ref edited, ind);
                     else 
                     {
-                        if (Node != null)
-                            Node.InspectInList(ref edited, ind);
-                        else
-                        {
-                           /* if ("Node".select_Index(60, ref _nodeIndex, book._nodes))
-                                Node = book._nodes[_nodeIndex];*/
+                        "Node".select_iGotIndex(60, ref NodeIndex, book.GetAllNodes());
 
-                            if (icon.Enter.Click())
-                                edited = ind;
-                        }
+                        if (icon.Enter.Click())
+                            edited = ind;
                     }   
                 }
 
                 public string GetNameForInspector()
                 {
-                    var n = Node;
+                    var n = GenerateNodeChain();
 
                     if (n != null)
                         return n.GetNameForInspector();
@@ -131,26 +114,26 @@ namespace QuizCanners.IsItGame.NodeNotes
                     if (b.IsNullOrEmpty() == false)
                         return b;
 
-                    if (Node == null)
-                        return "Node {0} not found".F(_nodeIndex);
+                    if (GenerateNodeChain().LastNode == null)
+                        return "Node {0} not found".F(NodeIndex);
 
                     return null;
                 }
                 #endregion
 
 
-
-                public FullReference(Node node)
+                public Reference(Node node, ConfigBookScriptableObject book)
                 {
-                    Node = node;
+                    NodeIndex = node.IndexForInspector;
+                    _book = new BookReference(book);
                 }
-                public FullReference(ConfigBook book)
+                public Reference(ConfigBookScriptableObject book)
                 {
-                    _nodeIndex = -1;
+                    NodeIndex = -1;
                     _book = new BookReference(book);
                 }
 
-                public FullReference()
+                public Reference()
                 {
                     _book = new BookReference();
                 }
