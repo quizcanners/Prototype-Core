@@ -38,7 +38,7 @@ namespace Dungeons_and_Dragons
             return base.NeedAttention();
         }
 
-        public override string GetNameForInspector() => "Dungeons & Dragons 5e";
+        public override string GetReadOnlyName() => "Dungeons & Dragons 5e";
 
         public override void Inspect()
         {

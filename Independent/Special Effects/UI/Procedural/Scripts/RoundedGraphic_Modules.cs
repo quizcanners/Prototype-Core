@@ -178,7 +178,7 @@ namespace QuizCanners.IsItGame.UI
             public abstract string ClassTag { get; }
 
             #region Inspect
-            public virtual string GetNameForInspector() => ClassTag;
+            public virtual string GetReadOnlyName() => ClassTag;
 
             public virtual void Inspect()
             {

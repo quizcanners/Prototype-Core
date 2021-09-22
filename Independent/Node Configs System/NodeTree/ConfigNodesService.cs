@@ -9,20 +9,42 @@ namespace QuizCanners.IsItGame.NodeNotes
     public partial class ConfigNodesService : Service.BehaniourBase, IPEGI
     {
         [SerializeField] internal BooksDictionary books = new BooksDictionary();
-
-        [NonSerialized] private ConfigBookScriptableObject.Node.Reference _reference;
+        [SerializeField] private ConfigBookScriptableObject.Node.Reference _reference;
 
 
         public void SetCurrent(ConfigBookScriptableObject.NodesChain chain) => _reference = chain.GetReferenceToLastNode();
         public bool IsCurrent(ConfigBookScriptableObject.Node node) => _reference != null && _reference.IsReferenceTo(node);
         public bool IsCurrent(ConfigBookScriptableObject.Node.Reference reff) => _reference != null && _reference.SameAs(reff);
 
-        public bool AnyEntered => _reference != null && _reference.GenerateNodeChain().LastNode != null;
-        
+        public bool AnyEntered
+        {
+            get
+            {
+                if (_reference == null)
+                    return false;
+
+                var c = _reference.GenerateNodeChain();
+
+                return c != null && c.LastNode != null;
+            }
+        }
 
         [Serializable]
         internal class BooksDictionary: SerializableDictionary<string, ConfigBookScriptableObject> 
         {
+            protected override CollectionMetaData CollectionMeta
+            {
+                get
+                {
+                    if (_collectionMeta == null)
+                    {
+                        _collectionMeta = new CollectionMetaData(labelName: "Node Books", showAddButton: false) { ElementName = ElementName };
+                    }
+                    return _collectionMeta;
+                }
+            }
+
+
             public override void Inspect()
             {
                 base.Inspect();
@@ -30,7 +52,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                 if (!CollectionMeta.IsInspectingElement)
                 {
                     ConfigBookScriptableObject tmp = null;
-                    if ("Add Book".edit(ref tmp).nl() && tmp && ContainsKey(tmp.name) == false)
+                    if ("Add Book".edit(90, ref tmp).nl() && tmp && ContainsKey(tmp.name) == false)
                         Add(tmp.name, tmp);
                 }
             }

@@ -143,7 +143,7 @@ namespace Dungeons_and_Dragons
                     edited = ind;
             }
 
-            public string GetNameForInspector() => pegi.GetNameForInspector(Value);
+            public string GetReadOnlyName() => pegi.GetNameForInspector(Value);
 
 
             public override void Inspect()

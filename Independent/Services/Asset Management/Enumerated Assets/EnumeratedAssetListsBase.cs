@@ -98,7 +98,7 @@ namespace QuizCanners.IsItGame
 
         public int GetCount() => list.IsNullOrEmpty() ? 0 : list.Count;
 
-        public string GetNameForInspector() => nameForInspector + " " + (list.IsNullOrEmpty() ? "Empty" : pegi.GetNameForInspector(list[0]));
+        public string GetReadOnlyName() => nameForInspector + " " + (list.IsNullOrEmpty() ? "Empty" : pegi.GetNameForInspector(list[0]));
 
         public void Inspect()
         {

@@ -14,8 +14,14 @@ namespace QuizCanners.IsItGame.NodeNotes
         public const string FILE_NAME = "Node Book";
         public const string KEY_SUFFIX = ".key";
 
-        private Node _rootNode = new Node();
+        [SerializeField] private CfgData _encodedNodes;
+        [SerializeField] private bool _encoded;
+        [SerializeField] private int _freeNodeIndex;
+
         [NonSerialized] private List<Node> _cachedAllNodes = new List<Node>();
+
+        private Node _rootNode = new Node();
+      
         public int Version { get; private set; }
 
         public void OnNodeTreeChanged()
@@ -46,31 +52,7 @@ namespace QuizCanners.IsItGame.NodeNotes
 
             return _rootNode;
         }
-
-        private Node RootNode
-        {
-            set 
-            {
-                _rootNode = value;
-                _encoded = false;
-            }
-        }
-
-        [SerializeField] private CfgData _encodedNodes;
-        [SerializeField] private bool _encoded;
-        [SerializeField] private int _freeNodeIndex;
-
-        public void OnBeforeSerialize()
-        {
-            if (!_encoded)
-            {
-                _encodedNodes = Encode().CfgData;
-                _encoded = true;
-            }
-        }
-
-        public void OnAfterDeserialize() { }
-
+    
         public NodesChain this[Node.Reference reff]
         {
             get
@@ -83,9 +65,19 @@ namespace QuizCanners.IsItGame.NodeNotes
 
 
         private void RepopulateNodesChain(NodesChain c) => GetRootNode().TryGet(c.GetReferenceToLastNode(), c);
-        
+
         #region Encode & Decode 
 
+        public void OnBeforeSerialize()
+        {
+            if (!_encoded)
+            {
+                _encodedNodes = Encode().CfgData;
+                _encoded = true;
+            }
+        }
+
+        public void OnAfterDeserialize() { }
         public CfgEncoder Encode() =>new CfgEncoder()
                 .Add("n", _rootNode);
 
@@ -121,7 +113,9 @@ namespace QuizCanners.IsItGame.NodeNotes
                 if (_inspectedStuff == -1 && "Clear".ClickConfirm(confirmationTag: "DelBook", toolTip: "This will destroy all the nodes. Are you sure?"))
                 {
                     _freeNodeIndex = 0;
-                    RootNode = new Node(this);
+                    _rootNode = new Node(this);
+                    _encoded = false;
+
                     OnNodeTreeChanged();
                 }
 

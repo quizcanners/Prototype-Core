@@ -12,6 +12,7 @@ namespace QuizCanners.IsItGame.NodeNotes
         public class NodesChain : IDisposable, IPEGI, IPEGI_ListInspect, IGotReadOnlyName
         {
             private List<NodeChainToken> _chain = new List<NodeChainToken>();
+            public ConfigBookScriptableObject Book { get; private set; }
 
             public List<NodeChainToken> Nodes
             {
@@ -29,6 +30,15 @@ namespace QuizCanners.IsItGame.NodeNotes
                 }
             }
 
+            public NodesChain GetNodeInChain(int index) 
+            {
+                var sn = _chain.TryGet(index);
+                if (sn == null)
+                    return null;
+
+                return Book[new Node.Reference(sn.Node, Book)];
+            }
+
             public Node LastNode 
             {
                 get
@@ -42,7 +52,7 @@ namespace QuizCanners.IsItGame.NodeNotes
 
             private int _version;
 
-            public ConfigBookScriptableObject Book { get; private set; }
+          
 
             public Node.Reference GetReferenceToLastNode()
             {
@@ -93,7 +103,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                     "Empty Node Chain".writeWarning();
             }
 
-            public string GetNameForInspector()
+            public string GetReadOnlyName()
             {
                 if (LastNode != null)
                     return "Chain [{0}] -> {1}".F(_chain.Count, LastNode.GetNameForInspector());

@@ -75,7 +75,7 @@ namespace QuizCanners.IsItGame
             pegi.edit(ref value, inspectedObjectType);
         }
 
-        public string GetNameForInspector() => nameForInspector + " " + (value ? value.name : ("No " + inspectedObjectType));
+        public string GetReadOnlyName() => nameForInspector + " " + (value ? value.name : ("No " + inspectedObjectType));
 
         #endregion
     }

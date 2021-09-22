@@ -86,7 +86,7 @@ namespace QuizCanners.IsItGame.NodeNotes
 
         public string NameForInspector { get { return name; } set { name = value; } }
 
-        public override string GetNameForInspector() => name;
+        public override string GetReadOnlyName() => name;
 
        /* public override void InspectInList(ref int edited, int ind) {
 

@@ -100,11 +100,11 @@ namespace QuizCanners.IsItGame
                     EnableNoise = _enableNoise;
 
 
-                if (GetNameForInspector().ClickLabel() || this.Click_Enter_Attention())
+                if (GetReadOnlyName().ClickLabel() || this.Click_Enter_Attention())
                     edited = index;
             }
 
-            public string GetNameForInspector() => "Noise Texture";
+            public string GetReadOnlyName() => "Noise Texture";
             #endregion
         }
     }

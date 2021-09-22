@@ -100,7 +100,7 @@ namespace QuizCanners.IsItGame.NodeNotes
             }
         }*/
         
-        public string GetNameForInspector() => texts.NameForInspector;
+        public string GetReadOnlyName() => texts.NameForInspector;
 
         public string NeedAttention() {
 

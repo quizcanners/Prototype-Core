@@ -318,8 +318,15 @@ MonoBehaviour:
   books:
     keys:
     - Whitehawk.nodeConfig
+    - BeyoundTheSwampFires.nodeConfig
     values:
     - {fileID: 11400000, guid: 5ef6df669daeb07458fac73afd7d794a, type: 2}
+    - {fileID: 11400000, guid: 6f504a0eea4810a4a81728ab140eaa97, type: 2}
+  _reference:
+    _book:
+      Id: Whitehawk.nodeConfig
+    NodeIndex: 25
+    _treeVersion: 0
 --- !u!1 &635623451
 GameObject:
   m_ObjectHideFlags: 0

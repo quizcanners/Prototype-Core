@@ -189,7 +189,7 @@ namespace QuizCanners.IsItGame
 #endif
             }
 
-            public string GetNameForInspector() => "{0}: {1}".F(Type.ToString(), ScenePath);
+            public string GetReadOnlyName() => "{0}: {1}".F(Type.ToString(), ScenePath);
 
           
             #endregion

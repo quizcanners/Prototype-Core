@@ -118,21 +118,21 @@ namespace QuizCanners.IsItGame.UI
                     gotPixPerfTag = !pixPfTag.IsNullOrEmpty();
 
                     if (!gotPixPerfTag)
-                        "{0} doesn't have {1} tag".F(shad.name, ShaderTags.PixelPerfectUi.GetNameForInspector()).writeWarning();
+                        "{0} doesn't have {1} tag".F(shad.name, ShaderTags.PixelPerfectUi.GetReadOnlyName()).writeWarning();
                     else
                     {
 
                         mayBeDefaultMaterial = false;
 
-                        expectedScreenPosition = pixPfTag.Equals(ShaderTags.PixelPerfectUis.Position.GetNameForInspector());
+                        expectedScreenPosition = pixPfTag.Equals(ShaderTags.PixelPerfectUis.Position.GetReadOnlyName());
 
                         if (!expectedScreenPosition)
                         {
 
-                            expectedAtlasedPosition = pixPfTag.Equals(ShaderTags.PixelPerfectUis.AtlasedPosition.GetNameForInspector());
+                            expectedAtlasedPosition = pixPfTag.Equals(ShaderTags.PixelPerfectUis.AtlasedPosition.GetReadOnlyName());
 
                             if (!expectedAtlasedPosition)
-                                possibleFadePosition = pixPfTag.Equals(ShaderTags.PixelPerfectUis.FadePosition.GetNameForInspector());
+                                possibleFadePosition = pixPfTag.Equals(ShaderTags.PixelPerfectUis.FadePosition.GetReadOnlyName());
                         }
 
                         needThirdUv = expectedAtlasedPosition || (possibleFadePosition && feedPositionData);
@@ -381,7 +381,7 @@ namespace QuizCanners.IsItGame.UI
 
                 var noTag = spriteTag.IsNullOrEmpty();
 
-                if (noTag || !spriteTag.SameAs(ShaderTags.SpriteRoles.Hide.GetNameForInspector()))
+                if (noTag || !spriteTag.SameAs(ShaderTags.SpriteRoles.Hide.GetReadOnlyName()))
                 {
                     if (noTag)
                         spriteTag = "Sprite";

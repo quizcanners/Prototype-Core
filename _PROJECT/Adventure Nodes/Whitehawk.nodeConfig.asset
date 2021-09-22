@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Whitehawk.nodeConfig
   m_EditorClassIdentifier: 
   _encodedNodes:
-    _value: n|198|n|4|ROOT|i|1|0|c|176|e|95|n|2|25|i|2|25|c|75|e|19|n|2|29|i|2|29|c|0|||e|19|n|2|30|i|2|30|c|0|||e|19|n|2|31|i|2|31|c|0|||||e|19|n|2|26|i|2|26|c|0|||e|19|n|2|27|i|2|27|c|0|||e|19|n|2|28|i|2|28|c|0|||||
+    _value: n|367|n|4|ROOT|i|1|0|c|337|e|176|n|14|Whitehawk Town|i|2|25|c|99|e|27|n|2|29|i|2|29|c|0||cfgs|0|||e|27|n|2|30|i|2|30|c|0||cfgs|0|||e|27|n|2|31|i|2|31|c|0||cfgs|0||||cfgs|35|DND|7|t|2|-1||AdvLocations|5|l|0|||||e|65|n|6|Regent|i|2|26|c|33|e|27|n|2|32|i|2|32|c|0||cfgs|0||||cfgs|0|||e|34|n|9|BlackHawk|i|2|27|c|0||cfgs|0|||e|37|n|11|Dark
+      Circle|i|2|28|c|0||cfgs|0||||cfgs|0|||
   _encoded: 1
-  _freeNodeIndex: 32
+  _freeNodeIndex: 33

@@ -29,6 +29,7 @@ namespace QuizCanners.IsItGame.NodeNotes
             {
                 [SerializeField] private BookReference _book;
                 [SerializeField] public int NodeIndex = -1;
+                [SerializeField] private int _treeVersion;
 
                 [NonSerialized] private NodesChain _cachedChain;
 
@@ -44,7 +45,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                 public NodesChain GenerateNodeChain()
                 {
                     if (_cachedChain == null)
-                        _cachedChain = Service.Get<ConfigNodesService>()[this];
+                        Service.Try<ConfigNodesService>(s => _cachedChain = s[this]);
                     
                     return _cachedChain;
                 }
@@ -60,7 +61,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                 {
                     var book = GetBook();
 
-                    if (book == null || "Book ({0})".F(_book.GetNameForInspector()).isEntered(ref _inspectedStuff, 0).nl())
+                    if (book == null || "Book ({0})".F(_book.GetReadOnlyName()).isEntered(ref _inspectedStuff, 0).nl())
                         _book.Inspect();
                     
                     var chain = GenerateNodeChain();
@@ -93,7 +94,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                     }   
                 }
 
-                public string GetNameForInspector()
+                public string GetReadOnlyName()
                 {
                     var n = GenerateNodeChain();
 
@@ -124,7 +125,7 @@ namespace QuizCanners.IsItGame.NodeNotes
 
                 public Reference(Node node, ConfigBookScriptableObject book)
                 {
-                    NodeIndex = node.IndexForInspector;
+                    NodeIndex = node == null ? -1 : node.IndexForInspector;
                     _book = new BookReference(book);
                 }
                 public Reference(ConfigBookScriptableObject book)

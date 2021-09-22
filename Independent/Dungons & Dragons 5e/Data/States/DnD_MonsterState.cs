@@ -28,7 +28,7 @@ namespace Dungeons_and_Dragons
                 edited = ind;
         }
 
-        public string GetNameForInspector() => pegi.GetNameForInspector(MonsterName);
+        public string GetReadOnlyName() => pegi.GetNameForInspector(MonsterName);
         
             
         

@@ -57,14 +57,14 @@ namespace QuizCanners.IsItGame
 
                 pegi.toggleIcon(ref _enabled);
 
-                if (GetNameForInspector().ClickLabel() || icon.Enter.Click())
+                if (GetReadOnlyName().ClickLabel() || icon.Enter.Click())
                     edited = index;
 
                 if (icon.Refresh.Click() || changes)
                     Regenerate();
             }
 
-            public string GetNameForInspector() => "Random Seed {0}".F(_enabled ? "({0} to {1})".F(_min, _max) : "");
+            public string GetReadOnlyName() => "Random Seed {0}".F(_enabled ? "({0} to {1})".F(_min, _max) : "");
         }
     }
 }

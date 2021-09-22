@@ -201,7 +201,7 @@ namespace QuizCanners.IsItGame.NodeNotes
             return changed;
         }
         */
-        public virtual string GetNameForInspector() => GetType().ToPegiStringType();
+        public virtual string GetReadOnlyName() => GetType().ToPegiStringType();
 
 
 

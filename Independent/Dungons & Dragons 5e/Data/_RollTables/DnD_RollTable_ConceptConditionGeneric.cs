@@ -137,7 +137,7 @@ namespace Dungeons_and_Dragons
                 return false;
             }
 
-            public string GetNameForInspector() => ConditionEnum.ToString();
+            public string GetReadOnlyName() => ConditionEnum.ToString();
 
             public void Roll(RolledTable.Result result)
             {

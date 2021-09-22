@@ -1,6 +1,5 @@
 using Dungeons_and_Dragons;
 using QuizCanners.Inspect;
-using QuizCanners.IsItGame.NodeNotes;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,12 +9,10 @@ namespace QuizCanners.IsItGame.Develop
     public class AdventureNodesLocationScriptableObject : ScriptableObject, IPEGI, IGotName
     {
         public const string FILE_NAME = "Adventure Location";
-
+  
         public List<TableRollResult> RandomRollResults = new List<TableRollResult>();
         public List<AdventureNodeSkillCheck> SkillChecks = new List<AdventureNodeSkillCheck>();
-
         [SerializeField] private string _key;
-        [SerializeField] private ConfigBookScriptableObject.Node.Reference _entranceNode = new ConfigBookScriptableObject.Node.Reference();
 
         #region Inspector
         private int _inspectedStuff = -1;
@@ -32,7 +29,6 @@ namespace QuizCanners.IsItGame.Develop
 
             "Random Roll Results".enter_List(RandomRollResults, ref _inspectedTableRollResult, ref _inspectedStuff, ++groupIndex).nl();
             "Skill Checks".enter_List(SkillChecks, ref _inspectedSkill, ref _inspectedStuff, ++groupIndex).nl();
-            _entranceNode.enter_Inspect_AsList(ref _inspectedStuff, ++groupIndex).nl();
 
         }
         #endregion

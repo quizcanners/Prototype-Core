@@ -123,7 +123,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                     break;
                 case 1:
                     if (_conditions.Count == 1)
-                        "{0}: {1}".F(_name, _conditions[0].GetNameForInspector()).write();
+                        "{0}: {1}".F(_name, _conditions[0].GetReadOnlyName()).write();
                     else goto default;
                     break;
                 default:

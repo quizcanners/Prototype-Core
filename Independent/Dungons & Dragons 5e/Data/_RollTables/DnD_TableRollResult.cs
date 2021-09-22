@@ -7,26 +7,46 @@ using UnityEngine;
 namespace Dungeons_and_Dragons
 {
     [Serializable]
-    public class TableRollResult : IPEGI, IGotReadOnlyName, IGotName, IPEGI_ListInspect, ISerializationCallbackReceiver
+    public class TableRollResult : IPEGI, IGotReadOnlyName, IGotName, IPEGI_ListInspect, ISerializationCallbackReceiver, ICfg
     {
         [SerializeField] private string _name;
         [SerializeField] private string tableKey;
-        [SerializeField] private CfgData _data;
 
         public RolledTable.Result result = new RolledTable.Result();
 
         private RandomElementsRollTablesDictionary Tables => Service.TryGetValue<DnD_Service, RandomElementsRollTablesDictionary>(s => s.DnDPrototypes.RollTables);
 
+        #region Encode & Decode
+
+        public CfgEncoder Encode() => new CfgEncoder()
+            .Add_String("n", _name)
+            .Add_String("t", tableKey)
+            .Add("r", result);
+
+        public void Decode(string key, CfgData data)
+        {
+            switch (key) 
+            {
+                case "n": _name = data.ToString(); break;
+                case "t": tableKey = data.ToString(); break;
+                case "r": result.DecodeFull(data); break;
+            }
+        }
+
+        [SerializeField] private CfgData _data;
         public void OnBeforeSerialize() =>  _data = result.Encode().CfgData;
         public void OnAfterDeserialize()
         {
             result = new RolledTable.Result();
-            _data.DecodeFull(ref result);
+            _data.DecodeOverride(ref result);
             
         }
+
+        #endregion
+
         #region Inspector
         public string NameForInspector { get => _name; set => _name = value; }
-        public string GetNameForInspector() => tableKey;
+        public string GetReadOnlyName() => tableKey;
 
         public void Inspect()
         {
@@ -73,6 +93,7 @@ namespace Dungeons_and_Dragons
                 }
             }
         }
+
         #endregion
 
     }

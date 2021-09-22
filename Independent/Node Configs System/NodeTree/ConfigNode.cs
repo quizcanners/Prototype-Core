@@ -47,7 +47,8 @@ namespace QuizCanners.IsItGame.NodeNotes
                 var cody = new CfgEncoder()
                     .Add_String("n", _name)
                     .Add("i", _index)
-                    .Add("c", _childNodes);
+                    .Add("c", _childNodes)
+                    .Add("cfgs", configs);
 
                 return cody;
             }
@@ -59,6 +60,7 @@ namespace QuizCanners.IsItGame.NodeNotes
                     case "n": _name = data.ToString(); break;
                     case "i": _index = data.ToInt(); break;
                     case "c": data.ToList(out _childNodes); break;
+                    case "cfgs": data.ToDictionary(out configs); break;
                 }
             }
 
@@ -98,17 +100,6 @@ namespace QuizCanners.IsItGame.NodeNotes
 
                 return false;
             }
-
-           /* public bool TryUpdateConfigUpTheHierarchy(ITaggedCfg val, CfgData dta)
-            {
-                if (configs.ContainsKey(val.TagForConfig))
-                {
-                    SetConfigOnTheNode(val, dta);
-                    return true;
-                }
-                
-                return false;
-            }*/
 
             public void SetConfigOnTheNode(ITaggedCfg val, CfgData dta)
             {
@@ -157,17 +148,29 @@ namespace QuizCanners.IsItGame.NodeNotes
             [NonSerialized] private bool _showConfigs;
             private static string _inspectedService = "";
 
+            private string CfgsCount => configs.Count == 0 ? "" :
+                (" " + (configs.Count == 1 ? configs.GetElementAt(0).Key : configs.Count.ToString()));
 
             public void Inspect(NodesChain myChain) 
             {
-                if ("Configurations".isConditionally_Entered(canEnter: Mgmt.IsCurrent(this), ref _showConfigs).nl())
+                if (_collectionMeta == null)
+                    _collectionMeta = new CollectionMetaData(_name, showAddButton: false, allowDeleting: false, showEditListButton: false);
+
+                if (_collectionMeta.IsInspectingElement == false)
+                    InspectSetCurrentOptions();
+
+                pegi.nl();
+
+                if ("Configurations {0}".F(CfgsCount).isConditionally_Entered(canEnter: Mgmt.IsCurrent(this), ref _showConfigs).nl())
                 {
                     var lst = Service.GetAll<ITaggedCfg>();
 
                     bool inspectingService = !_inspectedService.IsNullOrEmpty();
 
-                    if (inspectingService && "Exit {0}".F(_inspectedService).Click())
+                    if (inspectingService && icon.Back.Click() || "Exit {0}".F(_inspectedService).ClickLabel())
                         _inspectedService = "";
+
+                    pegi.nl();
 
                     foreach (var s in lst)
                     {
@@ -198,15 +201,14 @@ namespace QuizCanners.IsItGame.NodeNotes
                                 _inspectedService = s.TagForConfig;
 
                         }
-                    }
 
-                    //configs.Nested_Inspect();
+                        pegi.nl();
+                    }
                 }
 
                 if (!_showConfigs)
                 {
-                    if (_collectionMeta == null)
-                        _collectionMeta = new CollectionMetaData(_name, showAddButton: false, allowDeleting: false, showEditListButton: false);
+                  
 
                     _collectionMeta.Label = _name;
                     _collectionMeta.edit_List(_childNodes).nl();
@@ -214,6 +216,8 @@ namespace QuizCanners.IsItGame.NodeNotes
                     if (_collectionMeta.IsInspectingElement == false && "Add Node".Click().nl())
                         _childNodes.Add(new Node(_chain_ForInspector.Book));
                 }
+
+              
             }
 
             public void Inspect()
@@ -224,6 +228,32 @@ namespace QuizCanners.IsItGame.NodeNotes
                 }
             }
 
+            private void InspectSetCurrentOptions() 
+            {
+                if (Mgmt.AnyEntered == false)
+                {
+                    if (icon.Play.Click("Enter this Node"))
+                        Mgmt.SetCurrent(_chain_ForInspector);
+                }
+                else if (Mgmt.IsCurrent(this))
+                {
+                    if (_chain_ForInspector.Nodes.Count > 1)
+                    {
+                        if ("To Prev".Click())
+                            Mgmt.SetCurrent(_chain_ForInspector.GetNodeInChain(_chain_ForInspector.Nodes.Count - 2));
+                    }
+                    else
+                        icon.Active.draw();
+                }
+                else if (IsEntered)
+                {
+                    if ("Back Here".Click())
+                        Mgmt.SetCurrent(_chain_ForInspector);
+                }
+                else if ("Set".Click())
+                    Mgmt.SetCurrent(_chain_ForInspector);
+            }
+
             public void InspectInList(ref int edited, int ind)
             {
 
@@ -232,33 +262,12 @@ namespace QuizCanners.IsItGame.NodeNotes
                     if (icon.Enter.Click())
                         edited = ind;
 
-                    if ("ID {0}  [{1} brchs]".F(_index, GetCount()).ClickLabel(width: 120))
+                    if ("ID {0}  [{1} brchs{2}]".F(_index, GetCount(), CfgsCount).ClickLabel(width: 120))
                         edited = ind;
 
                     pegi.inspect_Name(this);
 
-                    if (Mgmt.AnyEntered == false)
-                    {
-                        if (icon.Play.Click("Enter this Node"))
-                            Mgmt.SetCurrent(_chain_ForInspector);
-                    }
-                    /* else if (Mgmt.IsCurrent(this))
-                     {
-                         if (_parentNode.Node != null)
-                         {
-                             if ("To Prev".Click())
-                                 Mgmt.SetCurrent(_parentNode.Node);
-                         }
-                         else
-                             icon.Active.draw();
-                     }*/
-                    else if (IsEntered)
-                    {
-                        if ("Back Here".Click())
-                            Mgmt.SetCurrent(_chain_ForInspector);
-                    }
-                    else if ("Set".Click())
-                        Mgmt.SetCurrent(_chain_ForInspector);
+                    InspectSetCurrentOptions();
                 }
             }
 

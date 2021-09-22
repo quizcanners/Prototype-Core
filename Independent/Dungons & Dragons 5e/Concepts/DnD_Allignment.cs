@@ -22,7 +22,7 @@ namespace Dungeons_and_Dragons
             }
         }
 
-        public string GetNameForInspector() => "{0} {1}".F(Order.ToString(), Goodness.ToString());
+        public string GetReadOnlyName() => "{0} {1}".F(Order.ToString(), Goodness.ToString());
     }
 
     public enum Goodness { Neutral = 0, Good = 1,  Evil =2 }
