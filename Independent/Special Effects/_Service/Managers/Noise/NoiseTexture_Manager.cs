@@ -7,7 +7,7 @@ namespace QuizCanners.IsItGame
     public partial class SpecialEffectShadersService
     {
         [System.Serializable]
-        public class NoiseTextureMGMT : IPEGI, INeedAttention, IPEGI_ListInspect, IGotReadOnlyName
+        public class NoiseTextureManager : IPEGI, INeedAttention, IPEGI_ListInspect, IGotReadOnlyName
         {
             private readonly ShaderProperty.Feature _noiseTexture = new ShaderProperty.Feature("USE_NOISE_TEXTURE");
             private readonly ShaderProperty.TextureValue _noiseTextureGlobal = new ShaderProperty.TextureValue("_Global_Noise_Lookup");

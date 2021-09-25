@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 namespace QuizCanners.IsItGame.SpecialEffects
 {
+    [DisallowMultipleComponent]
     public class BlurTransitionSimple : MonoBehaviour, IPEGI
     {
         [SerializeField] private Image _blurImage;

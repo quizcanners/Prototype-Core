@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace QuizCanners.IsItGame
 {
+
+    [DisallowMultipleComponent]
     [ExecuteAlways]
     public partial class SpecialEffectShadersService : Utils.Service.BehaniourBase
     {
@@ -10,7 +12,7 @@ namespace QuizCanners.IsItGame
         [SerializeField] public EffectsTimeManager EffectsTime = new EffectsTimeManager();
         [SerializeField] public GyroscopeParallaxManager GyroscopeParallax = new GyroscopeParallaxManager();
         [SerializeField] public EffectsMousePositionManager MousePosition = new EffectsMousePositionManager();
-        [SerializeField] public NoiseTextureMGMT NoiseTexture = new NoiseTextureMGMT();
+        [SerializeField] public NoiseTextureManager NoiseTexture = new NoiseTextureManager();
 
         #region Feeding Events
 
@@ -46,8 +48,9 @@ namespace QuizCanners.IsItGame
             }
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             if (!Application.isPlaying)
             {
                 #if UNITY_EDITOR

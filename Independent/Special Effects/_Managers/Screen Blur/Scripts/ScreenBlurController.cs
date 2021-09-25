@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace QuizCanners.IsItGame.SpecialEffects
 {
+    [DisallowMultipleComponent]
     public class ScreenBlurController : Service.BehaniourBase, IPEGI
     {
         [SerializeField] protected Camera MyCamera;

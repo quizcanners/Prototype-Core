@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace QuizCanners.IsItGame
 {
+    [DisallowMultipleComponent]
     public class EffectsRenderingInEditor : MonoBehaviour
     {
         #if UNITY_EDITOR

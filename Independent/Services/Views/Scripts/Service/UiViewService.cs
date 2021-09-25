@@ -281,8 +281,9 @@ namespace QuizCanners.IsItGame.UI
             }
         }
 
-        protected void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             DestroyInstance();
 
             _targetView = IigEnum_UiView.None;
